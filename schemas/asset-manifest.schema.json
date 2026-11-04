@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://playtime-protocol.invalid/schemas/asset-manifest.schema.json",
+  "title": "Playtime Protocol asset manifest",
+  "type": "object",
+  "required": ["asset_id", "category", "reference", "source", "license", "files", "transform", "validation", "approval", "version", "checksums"],
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "category": {"enum": ["character", "environment", "prop", "material", "vfx", "ui", "audio"]},
+    "association": {"type": "string"},
+    "reference": {"type": ["string", "null"], "description": "Approved reference path or null until design review."},
+    "source": {
+      "type": "object",
+      "required": ["workflow", "model", "parameters"],
+      "properties": {
+        "workflow": {"type": ["string", "null"]},
+        "model": {"type": ["string", "null"]},
+        "model_version": {"type": ["string", "null"]},
+        "parameters": {"type": "object"},
+        "provenance": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "object",
+      "required": ["source", "identifier", "commercial_use"],
+      "properties": {
+        "source": {"type": ["string", "null"]},
+        "identifier": {"type": ["string", "null"]},
+        "commercial_use": {"enum": ["permitted", "prohibited", "unknown"]},
+        "evidence": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "files": {"type": "object", "required": ["source", "editable", "export"], "properties": {"source": {"type": ["string", "null"]}, "editable": {"type": ["string", "null"]}, "export": {"type": ["string", "null"]}}, "additionalProperties": false},
+    "transform": {"type": "object", "required": ["units", "up_axis", "scale"], "properties": {"units": {"type": "string"}, "up_axis": {"enum": ["Y", "Z"]}, "scale": {"type": "number", "exclusiveMinimum": 0}}, "additionalProperties": true},
+    "geometry": {"type": "object"},
+    "materials": {"type": "array", "items": {"type": "object"}},
+    "animation": {"type": "array", "items": {"type": "string"}},
+    "attachments": {"type": "array", "items": {"type": "string"}},
+    "collision": {"type": "array", "items": {"type": "string"}},
+    "processing_history": {"type": "array", "items": {"type": "object", "required": ["tool", "version", "operation"], "properties": {"tool": {"type": "string"}, "version": {"type": "string"}, "operation": {"type": "string"}, "timestamp": {"type": "string", "format": "date-time"}}}},
+    "validation": {"type": "object", "required": ["status", "checks"], "properties": {"status": {"enum": ["pass", "fail", "not_run"]}, "checks": {"type": "array", "items": {"type": "object"}}}},
+    "approval": {"enum": ["provisional", "pending_review", "approved", "rejected"]},
+    "version": {"type": "string"},
+    "checksums": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}}
+  },
+  "additionalProperties": false
+}

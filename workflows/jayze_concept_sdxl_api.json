@@ -1,0 +1,9 @@
+{
+  "1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "sd_xl_base_1.0.safetensors"}},
+  "2": {"class_type": "CLIPTextEncode", "inputs": {"text": "Provisional visual concept only for Jayze, an original articulated action figure in the anime-action-hero mold. One heroic humanoid toy with visible ball-jointed shoulders, elbows, hips and knees, molded-plastic panels, a sheathed short blade on the back, confident ready stance, no armor plating. Warm gold and deep teal panels are a temporary color study, not approved canon. Three-quarter front view, entire figure centered and isolated against a plain white studio background, soft product photography lighting, crisp silhouette, realistic small toy materials, no people, no scenery, no text, no logos, no watermark, no extra figures.", "clip": ["1", 1]}},
+  "3": {"class_type": "CLIPTextEncode", "inputs": {"text": "text, logo, watermark, multiple figures, cropped figure, extra limbs, missing limbs, person, human skin, realistic human, toy packaging, scenery, busy background, blur", "clip": ["1", 1]}},
+  "4": {"class_type": "EmptyLatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}},
+  "5": {"class_type": "KSampler", "inputs": {"model": ["1", 0], "seed": 20261104, "steps": 8, "cfg": 5.0, "sampler_name": "euler", "scheduler": "normal", "positive": ["2", 0], "negative": ["3", 0], "latent_image": ["4", 0], "denoise": 1.0}},
+  "6": {"class_type": "VAEDecode", "inputs": {"samples": ["5", 0], "vae": ["1", 2]}},
+  "7": {"class_type": "SaveImage", "inputs": {"images": ["6", 0], "filename_prefix": "playtime/jayze/jayze_concept_provisional_sdxl_v001"}}
+}

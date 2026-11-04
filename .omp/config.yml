@@ -1,0 +1,5 @@
+modelRoles:
+  default: zai/glm-5.3
+  smol: zai/glm-5.3-flash
+  slow: openai-codex/gpt-6-luna
+  plan: openai-codex/gpt-6-luna

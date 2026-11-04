@@ -1,0 +1,15 @@
+{
+  "1": {"class_type": "UNETLoader", "inputs": {"unet_name": "flux-2-klein-4b.safetensors", "weight_dtype": "default"}},
+  "2": {"class_type": "CLIPLoader", "inputs": {"clip_name": "qwen_3_4b.safetensors", "type": "flux2"}},
+  "3": {"class_type": "CLIPTextEncode", "inputs": {"text": "A provisional design reference for Kip, a tiny weaponized racing car toy at 1:64 scale. Single compact toy vehicle, low wide chassis, four distinctly separated rubber wheels, clear front and rear, simple rounded racing-car body, small removable-looking toy launcher mounted above the rear chassis, chunky molded plastic and rubber construction, believable independent wheel shapes and wheel clearance, original unbranded design, neutral warm red body with cream panels as a temporary color study only. Three-quarter front view, complete vehicle centered and large in frame, isolated on seamless white background, soft even studio light, realistic product concept render, no people, no scenery, no text, no lettering, no logos, no watermark, no extra wheels, no extra vehicles.", "clip": ["2", 0]}},
+  "4": {"class_type": "ConditioningZeroOut", "inputs": {"conditioning": ["3", 0]}},
+  "5": {"class_type": "RandomNoise", "inputs": {"noise_seed": 20261103}},
+  "6": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler"}},
+  "7": {"class_type": "Flux2Scheduler", "inputs": {"steps": 8, "width": 1024, "height": 1024}},
+  "8": {"class_type": "CFGGuider", "inputs": {"model": ["1", 0], "positive": ["3", 0], "negative": ["4", 0], "cfg": 1.0}},
+  "9": {"class_type": "EmptyFlux2LatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}},
+  "10": {"class_type": "SamplerCustomAdvanced", "inputs": {"noise": ["5", 0], "guider": ["8", 0], "sampler": ["6", 0], "sigmas": ["7", 0], "latent_image": ["9", 0]}},
+  "11": {"class_type": "VAELoader", "inputs": {"vae_name": "flux2-vae.safetensors"}},
+  "12": {"class_type": "VAEDecode", "inputs": {"samples": ["10", 0], "vae": ["11", 0]}},
+  "13": {"class_type": "SaveImage", "inputs": {"images": ["12", 0], "filename_prefix": "playtime/kip/kip_concept_provisional_v001"}}
+}
