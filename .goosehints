@@ -1,0 +1,15 @@
+# Playtime Protocol: Innocence Lost — Goose local project hints
+CANONICAL GIT REPOSITORY: https://github.com/Rolaand-Jayz/PPIO.git
+OWNER/REPO: Rolaand-Jayz/PPIO
+CANONICAL BRANCH: main
+THIS IS THE WHOLE PROJECT MONOREPO, NOT THE ARCHIVED WEBSITE.
+
+This file applies only when Goose is working inside the checked-out PPIO repository. At session start verify git root, remote, branch, and clean/dirty status. Do not assume Goose's prior workspace already points here. If it doesn't, preserve the original local working tree and read docs/production/04_GOOSE_REPO_HANDOFF.md before touching remotes or moving files.
+
+Read AGENTS.md and docs/00_START_HERE.md. Goose Desktop is the primary implementer; preserve, inspect and import OMP's completed local Godot 4.7.2 prototype, five ComfyUI workflows, Python/Blender tools and Goose safety scripts rather than rebuilding them. Never overwrite verified local changes to make the repository look tidy. Do not force-push.
+
+DO NOT launch GPU-heavy tasks while the user is active without explicit authorization. Use resource preflight + verified in-job guard; one ComfyUI job at a time. The guard's interrupt path has not been validated under load. The known hard-freeze family occurred with --disable-dynamic-vram; keep existing approved launch configuration and do not toggle flags casually. See docs/production/02_RESOURCE_SAFETY.md.
+
+PPIO is currently PUBLIC: no private work, personal information, secrets, model weights, raw forensics, large caches or licensed assets should be pushed without an explicit privacy/rights check. The website is archived and must not be republished.
+
+At every meaningful stage: report what is verified, what remains reported-only, exact modified files and tests, blockers, and current safety status. Stop if evidence suggests impending memory pressure or an unsafe repository merge.

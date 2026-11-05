@@ -13,6 +13,8 @@ A living record of **approved story reality and verified implementation**, disti
 | PP-D006 | Production owner | Goose Desktop primary; reuse OMP's completed work |
 | PP-D007 | Repository governance | PPIO designated monorepo; website moved to archival branch |
 | PP-D008 | Operational safety | Active-user headroom, sequential ComfyUI jobs, continuous lightweight pressure monitoring |
+| PP-D009 | Explicit repository destination | `Rolaand-Jayz/PPIO`, canonical branch `main`; Goose must use the game monorepo, not an archived website or unrelated repo |
+| PP-D010 | Operational evidence boundary | Goose's reported guard and DynamicVRAM matrix are incomplete live validation; no successful ComfyUI generation claimed |
 
 ## Continuity cells to maintain as scenes lock
 - Scene ID, location and timestamp/ordering; active toys and vantage.

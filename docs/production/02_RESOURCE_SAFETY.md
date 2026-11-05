@@ -12,8 +12,22 @@ Use existing Goose-local `tools/resmon.sh` and `tools/comfy_start.sh` **after th
 ## Verified observation at Goose handoff
 At the reported observation point: ~21.3 GB available RAM, ~140 MB swap used, memory PSI 0, ~14.4 GB free VRAM, 9% GPU busy, no relevant amdgpu faults/OOM in three days of journal. This is a historical snapshot, **not** a current-state guarantee.
 
-## ComfyUI issue not resolved
-The prior freeze involved progressive pressure and about 5.6 GiB swap. The report states DynamicVRAM default-on in ComfyUI v0.42.1 and a silent hard-freeze, while simultaneously describing `--disable-dynamic-vram` as contraindicated. This is **inconclusive evidence**, not proof of causality or of a safe workaround. Preserve the currently verified launch args (including `--reserve-vram 3` if present), collect existing evidence, and do not change flags speculatively. The reported current safety policy forbids `--gpu-only`, `--highvram`, `--disable-pinned-memory`; do not reverse that without measured evidence and approval.
+## Corrected DynamicVRAM evidence (Goose report, 2026-11-04)
+
+The local forensic source is reported at `ops/DYNAMICVRAM-EVIDENCE.md` (not yet independently inspected in PPIO). Five-run matrix as supplied:
+
+- **DynamicVRAM enabled** — runs B/C: recoverable ComfyUI load-stage stalls; desktop remained responsive, reported peaks ~9.6 GB system RAM and 2.7 GB VRAM.
+- **DynamicVRAM disabled** — run D and later E: GPU-starved and machine-threatening hangs, including growing RAM/VRAM and approximately 5.6 GiB swap at the ~20:10 freeze. No OOM/GPU fault was recorded in journal. The temporal association strongly disfavors the disabled setting on this configuration but is **not** proof of the mechanism.
+- Goose corrected the assumption that disabling DynamicVRAM automatically enables HIGH_VRAM: the reported `model_management.py` logic says HIGH_VRAM requires explicit flags.
+- Reported co-factors were an MIOpen first-compile taking over 14 minutes and `fast_disk` mmap re-reads. These are **hypotheses**, not a confirmed root cause.
+- **No configuration has yet completed a ComfyUI generation.** Preserve the currently verified launch policy: DynamicVRAM enabled, `--reserve-vram 3`, pinned memory on. Do not use `--disable-dynamic-vram`, `--gpu-only`, `--highvram` or `--disable-pinned-memory` without new evidence and approval.
+- `--disable-fast-disk` (local decision candidate D-011) is only a **single-change hypothesis** to evaluate deliberately when the user is idle/authorizes and monitoring exists. Do not mix it with simultaneous memory setting changes.
+
+## Runtime guard: reported implemented, not stress-validated
+
+Goose's local `tools/comfy_guard.sh` reportedly samples available RAM, VRAM, swap trend and memory PSI every 15 seconds; scans bounded GPU kernel-fault patterns at about one-minute intervals; and on a pressure breach sends one graceful ComfyUI `POST /interrupt` then exits 2. It logs incidents without restarting or re-queuing. Its syntax, no-job and unreachable-server paths were reported checked. **A real workload's threshold-to-interrupt path has NOT been validated.**
+
+The guard must be coupled to each actual job, with job/process lifetime and failure codes accounted for. Never report a missing/unresponsive guard as successful monitoring. A 15-second polling interval can miss abrupt memory spikes, and `POST /interrupt` may not stop an already hung GPU kernel or prevent a machine freeze. Treat this guard as risk reduction rather than an enforceable VRAM cap.
 
 ## Validation sequence
 Read-only memory snapshot → lightweight API startup only if allowed → one small default-batch SDXL job while runtime monitoring → verify VRAM/RAM recovery toward baseline → expand gradually only with evidence. Avoid active-use interference, long benchmarks, multiple workers and aggressive retry. Don't claim a sustained soak test passed when only a smoke test ran.

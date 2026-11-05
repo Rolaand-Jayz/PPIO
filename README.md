@@ -4,6 +4,8 @@
 
 **Current state (2026-11-04):** This GitHub repository has been repurposed from a public preview website into the project's primary monorepo. The previous six-page site is preserved intact on the Git branch `archive/showcase-2026-11-04`, and has been removed from `main`. This is not a claim that GitHub Pages has been administratively disabled; see the publication note below.
 
+**Goose Desktop:** When working in PPIO, read the root [`.goosehints`](.goosehints) and [Goose repository handoff](docs/production/04_GOOSE_REPO_HANDOFF.md). Goose must verify its working directory and remote before touching existing local OMP artifacts.
+
 Start with [docs/00_START_HERE.md](docs/00_START_HERE.md), then [AGENTS.md](AGENTS.md). This repository is the destination for the already-existing local Godot/ComfyUI work, **not permission to recreate or overwrite that work**.
 
 ## Project

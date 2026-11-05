@@ -28,3 +28,9 @@ The **local** Goose handoff (2026-11-04) attested via on-disk file checks to:
 - Reconcile existing local story guideline documents if they are more recent or have explicit approvals not captured here.
 
 **If local files conflict with this GitHub scaffold**, preserve both states; identify the authoritative approval or test before merging. PPIO is the destination canonical monorepo; the local implementation remains the source of verified code until migrated.
+
+## Addendum — Goose's later 2026-11-04 report
+
+Goose reported completion of: (1) `tools/comfy_guard.sh` per-job monitoring/interrupt logic; (2) five-run DynamicVRAM evidence and correction, preserved locally at `ops/DYNAMICVRAM-EVIDENCE.md`; (3) a TTR-style local `ops/DECISIONS.md` and append-only `ops/CHANGELOG.md`; plus preservation of OMP's original forensic report. The newest report stated user ACTIVE and **no actual ComfyUI generation yet completed**. The local scripts/logs remain **reported, not imported or independently verified in GitHub**.
+
+**Required destination:** `https://github.com/Rolaand-Jayz/PPIO.git`, `main`. Start with [the explicit Goose repository handoff](04_GOOSE_REPO_HANDOFF.md) and `.goosehints` (loaded when the Goose working directory is inside the correct checkout). Reconcile rather than blindly replacing local governance files. Don't assume the local working directory and GitHub repository are currently the same. Stage safe code/doc imports only after checking public-repository privacy and source licensing.

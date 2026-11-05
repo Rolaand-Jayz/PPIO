@@ -1,5 +1,7 @@
 # Agent operating contract — PPIO
 
+**Canonical monorepo: `https://github.com/Rolaand-Jayz/PPIO.git`, branch `main`.** Goose must work in that Git tree, not `Shadow-library`, `PPIO`'s archival website branch, or another local repository. At session start check root, status and remote; if the local Godot tree belongs elsewhere, preserve it and import deliberately. Read `.goosehints` and `docs/production/04_GOOSE_REPO_HANDOFF.md`.
+
 Read `docs/00_START_HERE.md` and the relevant canonical docs before changes. Goose Desktop is the primary implementation agent. This repository's Git history, verified files, and written decisions outrank assumptions from chat summaries or old OMP logs.
 
 1. **Do not restart the project.** Inspect local work, file hashes, manifests, Git state, successful tests and any OMP/Goose handoff before editing. Import completed Godot and ComfyUI work incrementally; do not overwrite working files.
@@ -14,3 +16,5 @@ Read `docs/00_START_HERE.md` and the relevant canonical docs before changes. Goo
 10. **Update ledgers on meaningful decisions.** Consult `docs/governance/03_APPROVAL_AND_LOCKING_STANDARD.md` and append to `docs/governance/02_SOURCE_CHANGE_LOG.md`; never rewrite history to conceal a changed decision.
 
 The previously hosted website is archived only. Do not restore public Pages or add new site files to `main` without approval.
+
+**Live-job safety update:** Goose reports `tools/comfy_guard.sh` now exists locally; its no-job and error paths were checked but not its live interrupt under GPU pressure. See the reconciled five-run memory evidence in `docs/production/02_RESOURCE_SAFETY.md`. Neither resource monitoring nor the current ComfyUI flags guarantee freeze prevention.

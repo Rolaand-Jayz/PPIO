@@ -6,7 +6,7 @@ This is the operational index for **Playtime Protocol: Innocence Lost**. It deli
 1. Direct, explicit owner-approved decisions and [story canon](story/01_STORY_CANON.md).
 2. [Character bible](story/02_CHARACTER_BIBLE.md), [arc ledger](story/03_CHARACTER_AND_RELATIONSHIP_ARCS.md), and [geography/chronology](story/05_TIMELINE_AND_GEOGRAPHY.md). Conflicts require a recorded resolution; don't resolve by recency alone.
 3. [POV and narrative standard](story/04_POV_AND_SCENE_STANDARD.md), [gameplay](design/01_GAMEPLAY_CONTRACT.md), [visual direction](design/02_VISUAL_DIRECTION.md).
-4. [Production pipeline](production/01_ASSET_FACTORY.md), [resource safety](production/02_RESOURCE_SAFETY.md), [local handoff](production/03_HANDOFF_AND_MIGRATION.md).
+4. [Production pipeline](production/01_ASSET_FACTORY.md), [resource safety](production/02_RESOURCE_SAFETY.md), [local handoff](production/03_HANDOFF_AND_MIGRATION.md), and [Goose's canonical repository/acceptance handoff](production/04_GOOSE_REPO_HANDOFF.md).
 5. Working implementations, test proxies, illustrations, old concept-site text, speculative tasks.
 
 ## Governance
