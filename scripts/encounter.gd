@@ -8,6 +8,20 @@ var info: Label
 var status: Label
 var hud: VBoxContainer
 var materials := {}
+var portraits := {}
+var portrait_view: TextureRect
+
+const HUD_ICONS := {
+	"jayze_select": "res://assets/hud/icon_sword.png",
+	"kip_select": "res://assets/hud/icon_bolt.png",
+	"combat": "res://assets/hud/icon_ram.png",
+	"guard": "res://assets/hud/icon_shield.png",
+	"interact": "res://assets/hud/icon_note.png",
+	"cooperate": "res://assets/hud/icon_star.png",
+}
+
+func _hud_texture(path: String) -> Texture2D:
+	return load(path) if ResourceLoader.exists(path) else null
 
 func _ready() -> void:
 	_build_world()
@@ -113,26 +127,46 @@ func _build_world() -> void:
 func _build_hud() -> void:
 	var layer := CanvasLayer.new()
 	add_child(layer)
+	var panel := TextureRect.new()
+	panel.texture = _hud_texture("res://assets/hud/hud_panel.png")
+	if panel.texture:
+		panel.position = Vector2(8, 6)
+		panel.size = Vector2(500, 430)
+		panel.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		panel.stretch_mode = TextureRect.STRETCH_SCALE
+		panel.modulate = Color(1, 1, 1, 0.9)
+		panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		layer.add_child(panel)
 	hud = VBoxContainer.new()
 	hud.position = Vector2(18, 14)
 	hud.add_theme_constant_override("separation", 6)
 	layer.add_child(hud)
+	for id in ["jayze", "kip"]:
+		portraits[id] = _hud_texture("res://assets/portraits/%s.png" % id)
 	var title := Label.new()
 	title.text = "PLAYTIME PROTOCOL  /  BEAT SYSTEM PROTOTYPE"
 	hud.add_child(title)
+	var identity := HBoxContainer.new()
+	identity.add_theme_constant_override("separation", 8)
+	hud.add_child(identity)
+	portrait_view = TextureRect.new()
+	portrait_view.custom_minimum_size = Vector2(96, 96)
+	portrait_view.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait_view.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	identity.add_child(portrait_view)
 	info = Label.new()
-	hud.add_child(info)
+	identity.add_child(info)
 	status = Label.new()
 	status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hud.add_child(status)
 	var controls := HBoxContainer.new()
 	hud.add_child(controls)
-	_add_button(controls, "Jayze [1]", func(): selection = "jayze"; _refresh())
-	_add_button(controls, "Kip [2]", func(): selection = "kip"; _refresh())
-	_add_button(controls, "Enter combat [C]", func(): rules.begin_combat(); _refresh())
-	_add_button(controls, "Guard", func(): _act("guard"); _refresh())
-	_add_button(controls, "Music box", func(): _act("interact"); _refresh())
-	_add_button(controls, "Co-op", func(): _target("cooperate"); _refresh())
+	_add_button(controls, "Jayze [1]", func(): selection = "jayze"; _refresh(), "jayze_select")
+	_add_button(controls, "Kip [2]", func(): selection = "kip"; _refresh(), "kip_select")
+	_add_button(controls, "Enter combat [C]", func(): rules.begin_combat(); _refresh(), "combat")
+	_add_button(controls, "Guard", func(): _act("guard"); _refresh(), "guard")
+	_add_button(controls, "Music box", func(): _act("interact"); _refresh(), "interact")
+	_add_button(controls, "Co-op", func(): _target("cooperate"); _refresh(), "cooperate")
 	var moves := Label.new()
 	moves.text = "WASD move  •  Tab switches toy  •  In combat: move, then choose an action.  Targets are selected below."
 	hud.add_child(moves)
@@ -145,9 +179,14 @@ func _build_hud() -> void:
 	_add_button(targets, "Target Sprocket", func(): _set_target("sprocket"))
 	_add_button(targets, "Target Clanker", func(): _set_target("clanker"))
 
-func _add_button(parent: Node, text: String, callback: Callable) -> void:
+func _add_button(parent: Node, text: String, callback: Callable, icon_key := "") -> void:
 	var button := Button.new()
 	button.text = text
+	if icon_key != "" and HUD_ICONS.has(icon_key):
+		var icon := _hud_texture(HUD_ICONS[icon_key])
+		if icon:
+			button.icon = icon
+			button.expand_icon = true
 	button.pressed.connect(callback)
 	parent.add_child(button)
 
@@ -171,6 +210,8 @@ func _refresh() -> void:
 		visuals[id].position = Vector3(unit.cell.x - 4.5, 0, unit.cell.y - 3.5)
 		visuals[id].visible = unit.hp > 0
 	info.text = "Round %d  |  Phase: %s  |  Activations: %d  |  Selected: %s  |  Target: %s" % [rules.round_number, rules.phase, rules.activations_left, selection.capitalize(), target_id.capitalize()]
+	if portraits.has(selection):
+		portrait_view.texture = portraits[selection]
 	var health := "Jayze %d/%d    Kip %d/%d    Sprocket %d/%d    Clanker %d/%d" % [rules.units.jayze.hp, rules.units.jayze.max_hp, rules.units.kip.hp, rules.units.kip.max_hp, rules.units.sprocket.hp, rules.units.sprocket.max_hp, rules.units.clanker.hp, rules.units.clanker.max_hp]
 	status.text = "%s\n%s\n%s" % [health, rules.event, "RESULT: " + rules.result.to_upper() + " (R retries)" if rules.result != "" else ""]
 

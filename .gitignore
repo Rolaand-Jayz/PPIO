@@ -2,3 +2,7 @@
 __pycache__/
 *.import
 *.blend1
+# Local machine benchmark leftovers (not project content)
+smr_*.0.0
+workdrive_*.0.0
+comfy_local_cache.yaml

@@ -42,4 +42,51 @@ blender --background scene.blend --python tools/blender_process.py -- --output a
 
 The ComfyUI workflow must be in API prompt format. `cancel` interrupts the currently executing local job; it does not remove an arbitrary queued job. Blender exports only selected meshes and checks attachments by Empty name; no coordinate normalization or artistic approval is implied.
 
+## ComfyUI server launch (memory policy)
+
+This machine has 30 GB RAM / 16 GB VRAM shared with a live KDE desktop, browser, Steam, Discord, and Home Assistant. ComfyUI must not assume it owns either pool. Do **not** launch with `--gpu-only`, `--highvram`, or `--disable-async-offload`: on this build that forces `HIGH_VRAM` (all weights resident in VRAM) and page-locks up to ~14.8 GB of host RAM (`Enabled pinned memory 14836`), which pushes the desktop into swap. Observed consequence: 12.5 GB swap in use with the machine nearly frozen. Do **not** launch with `--disable-dynamic-vram` either: it turns off the weight streaming this policy depends on. On 2026-11-04 the running server had it set minutes before the desktop thrashed into swap (5.6 GiB in use) and hard-froze; the kernel journal recorded no OOM and no GPU fault, just silence — the same silent-hang signature as the HIGH_VRAM failure above.
+
+Correct launch — dynamic VRAM management (weights stream and unload; VRAM returns to the ~2.4 GB desktop baseline after each job), 3 GB VRAM held back for the OS/Blender/Godot:
+
+```sh
+"/home/rolaandjayz/ComfyUI-Installs/ComfyUI (1) (1)/standalone-env/bin/python" \
+  "/home/rolaandjayz/ComfyUI-Installs/ComfyUI (1) (1)/ComfyUI/main.py" \
+  --extra-model-paths-config /mnt/workdrive/playtime-protocol-godot-comfy-blender/comfy_extra_paths.yaml \
+  --output-directory /mnt/workdrive/playtime-protocol-godot-comfy-blender/assets/source \
+  --reserve-vram 3
+```
+
+Do **not** add `--disable-pinned-memory` either: on this ROCm build it stalls dynamic-VRAM staging entirely (a 512px, 8-step SDXL job hung >10 min at "prepared for dynamic VRAM loading"). Pinned memory is a *ceiling* (~14.8 GB max); under `NORMAL_VRAM` only the live working set (~7–9 GB for SDXL fp16) is pinned during a job and released afterward. The safety comes from `NORMAL_VRAM` + `--reserve-vram`, not from disabling pinning.
+
+One server at a time on port 8188; verify with `tools/comfy.py` before starting another. After generation, VRAM should fall back near the ~2.4 GB desktop baseline; if it stays high, the wrong flags were used.
+
 No existing user project files or global OMP settings were changed. No generated asset, workflow, or model license is claimed.
+
+## Governance and ledgers (2026-11-04)
+
+Repository governance follows the continuity-controlled approach established for
+*The Twentieth Revision*: decisions and established state live in [`ops/DECISIONS.md`](ops/DECISIONS.md);
+document provenance lives in the append-only [`ops/CHANGELOG.md`](ops/CHANGELOG.md); corrections
+are appended, never silently rewritten; evidence is kept separate from interpretation.
+`README.md` remains the Level-1 operational policy. The DynamicVRAM reconciliation
+(which configuration actually failed, with the full failure matrix and primary-evidence
+citations) is in [`ops/DYNAMICVRAM-EVIDENCE.md`](ops/DYNAMICVRAM-EVIDENCE.md). Status as of
+2026-11-04: no configuration has completed a generation yet; the first successful job is
+the pending validation step, gated on idle or explicit authorization.
+
+## In-job resource monitoring (2026-11-04)
+
+Launch generation jobs under the guard — it samples RAM/VRAM/swap-trend/PSI every 15 s,
+checks kernel GPU-fault signatures once per minute, and on breach performs ComfyUI's
+graceful `POST /interrupt`, logs to `ops/guard-events.log`, and exits. It is per-job,
+not a daemon:
+
+```sh
+python3 tools/comfy.py submit workflows/kip_concept_sdxl_api.json
+tools/comfy_guard.sh --max-minutes 45
+python3 tools/comfy.py wait <prompt_id> --timeout 900 --output artifacts/comfy
+```
+
+Manual cancellation remains `python3 tools/comfy.py cancel`. The guard never queues,
+retries, or restarts work; on a breach, do not queue new work until `tools/resmon.sh`
+passes.

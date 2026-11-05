@@ -1,0 +1,34 @@
+# Decision ledger — Playtime Protocol
+
+Governance adapted from The Twentieth Revision's continuity-controlled approach:
+what this repository has *established* is recorded here as decisions with evidence and
+confidence labels; the source-document change log (`ops/CHANGELOG.md`) is append-only
+provenance for the guideline documents themselves. Corrections are appended; past
+entries are never silently rewritten.
+
+Confidence labels:
+- **VERIFIED** — supported by surviving files, logs, metadata, or an explicit recorded decision.
+- **RECONSTRUCTED** — supported by reliable project history (e.g. OMP session artifacts) where no byte-level snapshot survives.
+- **APPROXIMATE** — sequence known, exact detail not recoverable; includes labeled inference.
+
+Authority: `README.md` is Level-1 operational policy (OMP, user-approved). This ledger
+records and indexes decisions; it does not override the documents it points to.
+
+| ID | Date | Owner | Status | Decision | Confidence | Evidence |
+|---|---|---|---|---|---|---|
+| D-001 | 2026-11-04 | OMP | ACTIVE | Never launch ComfyUI with `--gpu-only`, `--highvram`, or `--disable-async-offload`; HIGH_VRAM page-locks ~14.8 GB host RAM → swap thrash, desktop near-freeze. | VERIFIED | README memory policy; `ops/sources/vram-session-report-01a1a809-2026-11-04.md` (run A) |
+| D-002 | 2026-11-04 | OMP | ACTIVE | Keep DynamicVRAM **enabled**; never launch with `--disable-dynamic-vram`. Disabled runs include the 20:10 silent desktop freeze (5.6 GiB swap, no OOM/GPU fault). See `ops/DYNAMICVRAM-EVIDENCE.md`. | VERIFIED | README; OMP log 2365119 (19:42:13 session title); kernel journal prev boot; runs B–E |
+| D-003 | 2026-11-04 | OMP | ACTIVE | Never launch with `--disable-pinned-memory`: stalls dynamic-VRAM staging (>10 min at "prepared for dynamic VRAM loading"). | VERIFIED | README; run B |
+| D-004 | 2026-11-04 | OMP | ACTIVE | Correct launch = standalone-env python + `--extra-model-paths-config comfy_extra_paths.yaml` + `--output-directory assets/source` + `--reserve-vram 3`. One server on 8188; verify before starting another. After jobs, VRAM returns to ~2 GB baseline. | VERIFIED | README launch block; `comfy/cli_args.py` L175/L181/L334-337 |
+| D-005 | 2026-11-01→04 | OMP | ACTIVE | Models stay in `/home/rolaandjayz/ComfyUI-Shared/models` (read-only extra-paths); contiguous SDXL cache copy at `/home/rolaandjayz/playtime-comfy-cache` is reused — never re-download or move models. | VERIFIED | `comfy_extra_paths.yaml`, `comfy_local_cache.yaml`, cache mtime 2026-11-04 17:16 |
+| D-006 | 2026-11-04 | OMP | ACTIVE | All character forms/room props are provisional primitive proxies pending approved designs; generated assets require `schemas/asset-manifest.schema.json` manifest with licensing/provenance; no license claimed over outputs. | VERIFIED | README; schema file |
+| D-007 | 2026-11-04 | User | ACTIVE | Resource targets: active-use free VRAM ≥ 4 GB, RAM ≥ 10 GB; idle ≥ 3 GB / ≥ 8 GB. Abort at RAM < 6 GB, free VRAM < 2 GB, sustained swap, kernel GPU errors. No new GPU jobs while user is active without explicit permission; one GPU job at a time; never concurrent model loads. | VERIFIED | User handoff instructions (this session) |
+| D-008 | 2026-11-04 | Goose | ACTIVE | Idle detection via `loginctl IdleHint` (KDE 6.8/Wayland); ScreenSaver D-Bus method unsupported. If undetectable, assume ACTIVE. No input hooks or interaction recording. | VERIFIED | `tools/resmon.sh`; gdbus probe (NotSupported); loginctl probe |
+| D-009 | 2026-11-04 | Goose | ACTIVE | GPU work launch order: `tools/resmon.sh` preflight → `tools/comfy_start.sh` (refuses pressure/active-user unless `GOOSE_FORCE_COMFY_START=1`) → run job with `tools/comfy_guard.sh` watching (auto `/interrupt` on breach; incidents to `ops/guard-events.log`). | VERIFIED | tool files; guard exit-path tests 2026-11-04 |
+| D-010 | 2026-11-04 | Goose | ACTIVE | Repository governance follows The Twentieth Revision approach: two ledgers (this decision ledger + append-only `ops/CHANGELOG.md`), confidence labels, corrections appended not rewritten, evidence kept separate from interpretation. | VERIFIED | `/mnt/workdrive/The-Twentieth-Revision/README.md` (two ledgers section) |
+| D-011 | 2026-11-04 | Goose | PROVISIONAL | First successful generation is still pending. Single-change candidates vs the README baseline, tested one at a time, never combined: (1) add `--disable-fast-disk`; (2) MIOpen first-compile mitigation. Each requires idle/authorization + active guard. | VERIFIED (state) / APPROXIMATE (candidate ranking) | `ops/DYNAMICVRAM-EVIDENCE.md` findings 2, 4 |
+
+## Open questions
+
+- Does the baseline (D-004) complete a job when the shared-model disk is bypassed (`--disable-fast-disk`)? — first validation job will answer.
+- Is the run-E freeze mechanism singular and allocator-level? — deliberately unresolved; must not be reproduced.
