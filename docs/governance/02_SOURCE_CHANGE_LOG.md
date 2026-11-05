@@ -74,3 +74,12 @@
 **Changes:** Added `docs/production/07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md`; updated queued optimization task, repo/agent hints, authority index and decisions to define joint D0–D3 review gates, scoped paired tests, hard safety/quality gates, model escalation and future GLM-5.5 evaluation. No model/provider was actually switched in this commit. The owner's separate post-combat start prompt is still required.
 
 **Operational boundary:** ChatGPT does not automatically receive Goose's local live state or decisions; owner supplies the report or requests a fresh PPIO GitHub review. No autonomous approval, hidden background work or unsupported data access is claimed.
+
+## PP-CHG-0008 — 2026-11-05
+**Confidence:** VERIFIED for owner feedback and GitHub documentation change. No local Goose configuration or model setting changed.
+
+**Trigger:** Owner rejected excessive process and benchmarking bureaucracy, emphasizing speed and recent success building quickly while retaining quality and safety.
+
+**Changes:** Simplified the deferred Goose optimization plan and decision/testing protocol. Goose now has autonomy to make small safe project-local changes and use targeted tests instead of four formal review stages and a full ten-test matrix. Owner and ChatGPT remain reasoning partners for consequential design, safety and final setup choices. GLM-5.3 Flash remains the intended default, with selective GLM-5.3 escalation.
+
+**Unchanged:** R1 non-destruction/repo rules, R2 system/user protection, R3 persistent safe delivery; actual Godot/Blender/ComfyUI/audio integration, originality and technical quality requirements; separate post-combat owner start prompt. No gameplay, assets, workflows or runtime modified.

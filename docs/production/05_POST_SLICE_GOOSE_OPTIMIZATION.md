@@ -1,78 +1,31 @@
-# Post-combat-slice Goose specialization and optimization
+# Goose Desktop — post-combat quick specialization
 
-**STATUS: QUEUED — DO NOT EXECUTE WHILE BUILDING THE COMBAT SLICE OR WITHOUT A NEW, EXPLICIT OWNER HANDOFF PROMPT.**
+**QUEUED.** Begin only after the combat vertical slice is completed **and the owner explicitly asks you to start**. Don't interrupt current work.
 
-**Owner-provided local project folder:** `/mnt/workdrive/playtime-protocol-godot-comfy-blender`  
-**Canonical GitHub monorepo:** `https://github.com/Rolaand-Jayz/PPIO.git`  
-**Canonical Git branch:** `main`
+**Local project:** `/mnt/workdrive/playtime-protocol-godot-comfy-blender`. Verify its Git root/remotes and protect dirty files.  
+**Canonical monorepo:** `https://github.com/Rolaand-Jayz/PPIO.git`, branch `main`.
 
-The local path is a working location, **not proof that its current Git remote or root is PPIO**. Before any change, inspect `git rev-parse --show-toplevel`, `git status --short`, `git remote -v`, `git branch -vv`, and last commit. Protect uncommitted local Godot/Blender/ComfyUI code, models, OMP work, Goose work and operational ledgers. Do not force-push, reset, clobber or reinitialize a working tree to make it match a remote.
+**Decision style:** Goose is the fast implementer, the owner and ChatGPT are reasoning partners for major decisions. Goose should **just make small safe improvements**, test them and keep what works. No approval ceremony for every skill or extension. Read [the streamlined decision and testing approach](07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md).
 
-## Entry condition
-Only begin **after the existing combat test slice reaches its recorded completion/QA milestone**: complete controller-first encounter and HUD, four party and 2–3 enemy rigs with real Godot animations, environment, VFX, original music and SFX, victory/defeat/restart, tested integrations, and transparent manual-test limitations. If the owner still needs to test the physical controller or listen to audio, explicitly report WAITING FOR OWNER VALIDATION; do not mislabel untested checks as PASS. This optimization is **the next phase**, not a parallel effort.
+## Optimize for actual production work
 
-## Adopt approved contributor laws and quality gates
-The repo now has an explicit [contributor standard](../../CONTRIBUTING.md), [resilience laws](../governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md), [current-slice transition](../governance/05_VERTICAL_SLICE_TRANSITION.md), [distinctive-design quality gates](../design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md) and [toolchain integration requirements](06_TOOLCHAIN_INTEGRATION_CONTRACT.md). Your specialization must **implement practical, tested support** for these existing rules rather than rewriting them or replacing owner decisions. The rules apply now to normal contributions; this **automated specialization** starts only after a separate owner prompt.
+**1. Start with what's already working.** Read `.goosehints`, `AGENTS.md`, `CONTRIBUTING.md`, existing scripts and the local handoff. Inspect installed Goose version, features and current config, without over-inventorying. Preserve the existing Godot prototype, `tools/comfy.py`, Blender export scripts, guarded ComfyUI launcher, caches/models, tests and Goose/OMP logs. Don't recreate them.
 
-## Joint decision authority, not unsupervised final selection
-**The owner and ChatGPT reason together about the target architecture and benchmark criteria; Goose implements, experiments and reports.** Read [specialization review and model routing protocol](07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md) before making a trial profile. Goose can explore alternatives and implement disposable, project-local pilots under existing safety and privacy rules, but **does not self-approve a permanent final setup**. The owner makes final selections with ChatGPT's evidence-based recommendations. There is no direct continuous ChatGPT-to-Goose connection: provide a report/committed evidence for the owner to bring to ChatGPT for review. Do not start before separate owner prompt after combat slice.
+**2. Make Godot + Blender + ComfyUI + audio actually work together.** Follow [toolchain integration](06_TOOLCHAIN_INTEGRATION_CONTRACT.md). Godot Editor inspection plus headless/runtime validation, Blender rig/animation authoring and GLB import, existing guarded ComfyUI workflows, original SFX/music integration and audio buses, Git, tests and asset manifests are all in scope. Prefer safe shell/API adapters over a new MCP extension when they work better. Don't let ComfyUI problems block unrelated work.
 
-**Initial model policy:** use GLM-5.3-Flash for most execution, GLM-5.3 for harder architecture, safety, debugging and important critical review, based on validated installed provider/model IDs and quota. GLM-5.5 is a future unverified challenger requiring separate availability and quality/cost test. See full routing triggers, paired benchmarking and decision gates in the review protocol.
+**3. Add a few useful project skills, not dozens.** Choose small load-on-demand procedures for Godot gameplay/controller/HUD, Blender rigs and animations, asset pipeline, story/continuity, original audio/UI and quality/testing. Use installed-version-compatible locations and schemas. Don't clone canon into prompt memory; link to approved PPIO documents.
 
-## Mission
-Goose Desktop will inspect its *actual installed version* and optimize **itself for long-term Playtime Protocol development**, not only combat. Evaluate native features and supported extensions, MCP tools, project skills, custom agents/roles, portable recipes, lifecycle hooks, persistent context, model/provider routing, optional desktop/MCP Apps and process/resource controls. Implement only improvements that have an observable quality, reliability, efficiency or safety benefit.
+**4. Write short repeatable recipes** for work Goose does repeatedly: safe feature edit + test; Blender → GLB → Godot import; guarded ComfyUI job when authorized; combat/audio/controller QA; checkpoint and resume. Explicit error handling, source paths, output manifests and rollback. Only enable needed extensions. Test each recipe on a small fixture once.
 
-**Boundaries:** Do not rewrite established contributor laws or invent numeric campaign length, section duration, encounter density, combat pacing, narrative structure, final design or progression numbers. These remain under separate owner discussion. Do not incur costs, enable background schedules, install untrusted/privileged components, alter system-wide drivers/packages, compromise security, or switch GPU-heavy model workloads on while the user is ACTIVE without express authorization.
+**5. Build resilience into the everyday workflow.** Honor [three laws and fallback ladder](../governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md). Keep write ownership serial, one heavy GPU job maximum, lightweight active-user and memory checks, bounded retries, safe fallbacks, and durable checkpoints. Never delete other work or overwrite editor-unsaved scenes. Never use background busy loops or promise work while a session is not running.
 
-## 1 — Audit and baseline
-- Confirm Goose Desktop/CLI version, capabilities and configuration paths against *official documentation for the installed build*. Do not assume the latest docs describe current installed behavior.
-- Inventory currently enabled/discoverable extensions, MCP servers, plugins, skills, agent roles, recipes, hooks, Apps, process helpers, model providers, local/global settings and permission grants. Record scope and overhead, not secrets.
-- Inspect existing `tools/comfy.py`, `tools/blender_process.py`, `tools/resmon.sh`, `tools/comfy_start.sh`, `tools/comfy_guard.sh`, Godot tests and all functional OMP/Goose integration artifacts. Verify they exist. **Do not recreate working adapters.**
-- Baseline at least four low-cost tasks: find a canonical character/POV rule; inspect a combat state without changes; run a narrow Godot headless test; trace an asset manifest from source through import. Record correctness, tool calls, repeated reads, latency, CPU/RAM and failures. No GPU stress test.
-- Produce a gap/benefit matrix: existing capability, observed limitation, proposed change, permissions, dependencies, test and rollback.
+**6. Guard against generic AI quality.** Follow [distinctive design and quality gates](../design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md). Check real shape/mechanism, animation, gameplay role, environmental specificity and audio signatures—not “looks unique” prose. Keep nonfinal art marked as such; offer owner a few meaningful choices when visual direction needs approval. Don't freeze production waiting for perfect documentation.
 
-## 2 — Maintain authoritative and small context
-- Keep `.goosehints`, `AGENTS.md` and persistent notes concise, prioritizing links to precise, authoritative PPIO docs. Avoid injecting the entire story bible or engineering spec on every message.
-- Use scoped per-directory context only if it improves task-specific accuracy. Provenance and canon remain in PPIO's governed source files, **not agent memory**.
-- Set up reliable session checkpoint/resume summaries: verified Git root/commit, dirty files, task scope, decisions, tests, safety status, open blockers, next safe action. Keep context retrieval targeted and output bounded.
-- Respect Goose's existing `ops/DECISIONS.md`, `ops/CHANGELOG.md` and PPIO governance history without overwriting either.
+**7. Model routing:** GLM-5.3 Flash is the default for fast/efficient execution; GLM-5.3 only when complexity, safety or repeated failures justify deeper reasoning. Verify installed provider IDs and actual usage. GLM-5.5 later only after a practical comparison if available. No expensive redundant reviewer trees; no local GPU LLM competing with ComfyUI.
 
-## 3 — Specialist skills, roles and recipes
-Inspect what the installed Goose version supports. Prefer a compact project-scoped implementation; current upstream conventions support project skills in `.agents/skills/<name>/SKILL.md` and portable YAML recipes. Create and validate **only useful modules**, rather than installing every available package.
+**8. Keep improvements tiny and reversible.** Make one change, run the one or two relevant checks, keep/revert, move on. Use project-scoped config and trusted tools; no unapproved purchases, security/privacy changes, privileged installs or heavy GPU tests while user ACTIVE. Avoid growing an always-on tool collection.
 
-Candidate skills:
-1. `ppio-godot-combat` — deterministic actions, party state, controller-first inputs, HUD and headless tests.
-2. `ppio-rig-animation` — Blender toy-specific rigs, skinning, sockets, GLB, Godot animation states, hit/VFX/SFX synchronization.
-3. `ppio-asset-factory` — existing guarded ComfyUI workflows, reusable Blender exporters, Godot import, licensing and manifests.
-4. `ppio-narrative-continuity` — toy POV, geography, character arcs, approved canon and change impact.
-5. `ppio-audio-ui` — event-linked original SFX/music, audio buses, input focus and gamepad menu QA.
-6. `ppio-quality-release` — bounded tests, artifact provenance, quality gates and safe deployment.
+## Deliverable
+Leave a working, **simpler** Goose project setup. Report briefly: installed and removed capabilities, what they enable, what was tested, any trade-offs, safety check results, remaining owner decisions, and how to roll back. Prove at least one full low-cost cross-tool path and one checkpoint/resume fallback. For major architectural choices or final permanent setup, present the options to the owner and ChatGPT for a quick reasoned decision.
 
-Candidate focused roles if supported: Gameplay Engineer, Technical Artist, Narrative Continuity Reviewer, Audio/UI Integrator and QA Reviewer. Keep one primary working agent; use isolated **read-only or nonconflicting** reviewers only when beneficial. Never have competing subagents edit the same files, or two agents run heavy GPU tasks concurrently.
-
-Candidate recipes: combat-change-and-regress; asset-generate-normalize-import; rig-animate-validate; story-change-impact-audit; audio-UI-test; project-checkpoint-and-resume. Each recipe must define inputs, allowed tools/extensions, bounded workload/turns, required tests, PASS/BLOCKED/FAIL outputs and rollback. For explicit `extensions` lists verify essential platform tools (e.g., Summon when delegation is needed) stay available. Do not schedule unattended recipes.
-
-## 4 — First-class editor and production integrations
-The optimized harness must verifiably interact with the installed **Godot Editor and headless/runtime**, **Blender**, **existing guarded ComfyUI instance**, **audio source and in-engine mixing tools**, **Git/asset manifests** and **test/QA systems**. Follow [the toolchain integration contract](06_TOOLCHAIN_INTEGRATION_CONTRACT.md); ensure editor scene inspection, imported rig/animation playback and audio events are real capabilities, not a list of installed plugins. Prefer existing local adapters if they are better than new MCP tools. Validate non-destructively on a test fixture and with version-matched APIs; no GPU-heavy testing while active.
-
-## 4A — Extensions, MCP and hooks
-- Inspect built-in Developer, Git, Skills/Summon, extension management and other already-working capabilities first. Avoid installing redundant Godot, Blender or ComfyUI extensions when a local scripted adapter is more reliable.
-- If a validated gap exists, investigate official/maintained Godot tooling, a Blender bridge, a lightweight ComfyUI API MCP, audio analysis tools, and a canon/file indexing utility. Prefer narrowly scoped permissions, pinned trusted versions, localhost-only interfaces, and no credential exposure.
-- Add **project-scoped**, reviewable hooks only where they make a measurable difference: before-commit secret/license check; after relevant edit a small syntax/manifest check; checkpoint after a session. Make hooks bounded, nonrecursive, idempotent, disableable and tested on harmless fixtures. Never run the whole asset pipeline or memory-heavy validation from a global hook.
-- Consider a lightweight Goose Desktop/MCP App for asset progress and QA/approval status **only if** a simpler text report does not suffice. Don't build an app merely because Apps exist.
-
-## 5 — Models, safety and process overhead
-- Evaluate available cloud/subscription and local reasoning models by actual task success and cost, without changing user auth or charging money. Keep GPU-based local LLMs off while ComfyUI uses the GPU.
-- Restrict always-on extensions, output volume, session history and concurrent child processes. Use low-cost headless checks, small targeted file searches and deterministic local code before invoking expensive models.
-- Keep active/idle resource gates, `resmon.sh` preflight, `comfy_guard.sh` monitoring, `--reserve-vram 3` and the established safer DynamicVRAM configuration until new, verified evidence authorizes a change. An interrupt guard is not guaranteed protection from sudden driver stalls.
-
-## 6 — Verify, present candidates, and obtain joint decision
-- For each proposed optimization, compare the same low-resource baseline task before/after, and measure errors, latency, duplicate work, context/tool overhead, CPU/RAM, and test outcome. Reject or roll back changes that worsen reliability.
-- Test skill discovery and use, recipe loading/execution, agent delegation under restricted extensions, safe hook firing, session checkpoint/restart, and the failure/rollback path without GPU stress.
-- Submit the evaluation matrix, configurations and test evidence for owner + ChatGPT review before selecting final adoption; Goose's recommendation is not final approval.
-- Commit portable, approved project-scoped configuration and docs to **PPIO** in reviewable increments after confirming remote/branch and PUBLIC-repo privacy restrictions. Keep machine-local paths/secrets in untracked local-only config. Preserve every existing working integration.
-- Provide: installed/retained/removed components, configuration files and paths, recipe/skill invocation instructions, before/after evidence, security/permission changes, running process overhead, revert instructions, and pending approvals.
-
-**Definition of done:** Owner-approved configuration after ChatGPT + owner review of evidence. A fresh Goose session in the correctly reconciled PPIO-linked local folder can discover task-relevant skills and tools, run a project recipe, preserve canon and work already completed, execute a bounded QA test, checkpoint progress and respect workstation headroom. Improvements must be demonstrable; merely adding tools does not count.
-
-**Do not automatically activate this post-slice plan merely because a build reports completion. Wait for the owner's explicit handoff prompt. Do not begin the next game-development assignment or rewrite established governance without the owner's separate instruction.**
+**Keep it practical. Finish the combat slice first. Do not automatically launch this phase.**
