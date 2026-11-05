@@ -1,8 +1,56 @@
-# Playtime Protocol — combat prototype
+# Playtime Protocol — combat prototype → combat test slice
 
-This directory was initially empty and had no Git metadata. It now contains a Godot 4.7.2 project with a procedural toy-scale encounter and isolated deterministic combat rules. All character forms and room props are provisional primitive proxies; no approved designs or canonical dimensions were available.
+This tree began as OMP's Godot 4.7.2 deterministic prototype and now contains
+the **complete controller-first combat test slice** (2026-11-05): four rigged
+party proxies (Jayze, Kip the car, Rallo, Jonnie), three rigged enemy proxies,
+a toy-scale arena, HUD/UI, original music and SFX, and the full
+battle/restart loop. All art/audio are **proxy/provisional** (non-final
+canon); see `docs/COMBAT_SLICE_REPORT.md` for the evidence-based status and
+`docs/CONTROLS.md` for the input reference.
 
-## Run
+## Run (combat test slice)
+
+Engine used for verification: Godot 4.7.2 mono at
+`/home/rolaandjayz/tools/godot-4.7.2-mono/Godot_v4.7.2-stable_mono_linux_x86_64/Godot_v4.7.2-stable_mono_linux.x86_64` (call it `$GODOT`).
+
+```sh
+$GODOT --path .            # play (Xbox-style pad recommended; keyboard/mouse parity)
+```
+
+Battle flow: explore → Y/Tab begins combat → move on highlighted cells →
+command menu → target → staged enemy turn with telegraphs → victory/defeat →
+restart. Start opens pause/settings (per-bus volume/mute, camera shake).
+
+## Rebuild assets (deterministic, CPU-only)
+
+```sh
+blender --background --python tools/build_combat_assets.py -- --out assets/characters   # rigs + arena (GLB)
+python3 tools/build_audio.py                                                            # music + SFX
+python3 tools/build_manifest.py                                                         # asset-manifest.json (checksums)
+```
+
+## Verify
+
+```sh
+$GODOT --headless --path . --script tests/battle_smoke.gd          # deterministic rules (20 groups)
+$GODOT --headless --path . --script tests/slice_integration.gd     # full battle loop through the director
+$GODOT --path . --script tests/hud_capture.gd                      # rendered QA captures -> artifacts/captures/ (needs display)
+```
+
+## Slice documentation
+
+- `docs/COMBAT_SLICE_REPORT.md` — verified vs reported-only status, limitations
+- `docs/CONTROLS.md` — controller-first input reference
+- `assets/asset-manifest.json` — per-asset rig/animation/license/checksum data
+- Governance for this work: `ops/CHANGELOG.md`, `ops/DECISIONS.md`
+
+---
+
+## Historical prototype notes (pre-slice)
+
+This directory was initially empty and had no Git metadata. It originally contained a Godot 4.7.2 project with a procedural toy-scale encounter and isolated deterministic combat rules. All character forms and room props are provisional primitive proxies; no approved designs or canonical dimensions were available.
+
+## Run (legacy prototype, superseded)
 
 ```sh
 godot-mono --path .
@@ -10,7 +58,7 @@ godot-mono --path .
 
 Controls: WASD moves the selected toy one cell while exploring; C or **Enter combat** starts the Beat System; Tab or keys 1/2 selects a toy. In combat, WASD moves once per activation (Kip can move up to two cells); use action buttons and choose a target. Two activations are available each round. Guard, the nearby music-box interaction, and the cooperative strike are available in the HUD. Press R after a result to restart. Cover and obstacle cells block movement; character forms remain provisional proxies.
 
-## Verify
+## Verify (legacy)
 
 ```sh
 godot-mono --headless --path . --editor --quit

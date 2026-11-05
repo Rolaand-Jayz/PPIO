@@ -1,0 +1,3157 @@
+{
+  "_meta": {
+    "project": "Playtime Protocol: Innocence Lost \u2014 combat test slice",
+    "schema": "../schemas/asset-manifest.schema.json",
+    "status_note": "ALL entries are proxy/provisional (non-final canon). Regenerate via tools/build_combat_assets.py and tools/build_audio.py.",
+    "generated": "2026-11-05"
+  },
+  "assets": [
+    {
+      "asset_id": "char_jayze",
+      "category": "character",
+      "association": "party \u2014 anime action-hero melee",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_jayze",
+        "export": "assets/characters/jayze.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "humanoid toy rig, 12 bones, rigid toy-segment weights"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "attack",
+        "ability",
+        "guard",
+        "hit",
+        "defeat",
+        "victory"
+      ],
+      "attachments": [
+        "Socket_Weapon"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jayze.glb": "7c94ed58f1fa2375addba902b3049c6ef672a064b4dd7addb6f35ab8e1a5106f"
+      }
+    },
+    {
+      "asset_id": "char_kip",
+      "category": "character",
+      "association": "party \u2014 weaponized die-cast race car",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_kip",
+        "export": "assets/characters/kip.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "VEHICLE rig: steer pivots + axle wheel chain, chassis pitch, 10 bones"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "attack",
+        "ability",
+        "guard",
+        "hit",
+        "defeat",
+        "victory",
+        "ram"
+      ],
+      "attachments": [
+        "Socket_Muzzle"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "kip.glb": "15927a72e9257298e283822a7c1e852e28b307040716337c3d3634113d50f8d5"
+      }
+    },
+    {
+      "asset_id": "char_rallo",
+      "category": "character",
+      "association": "party \u2014 gargoyle low-hover brawler",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_rallo",
+        "export": "assets/characters/rallo.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "winged compact rig with hover root animation, 14 bones"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "attack",
+        "ability",
+        "guard",
+        "hit",
+        "defeat",
+        "victory"
+      ],
+      "attachments": [
+        "Socket_ClawR"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "rallo.glb": "f465b526c231ff5098dab30a20c56a7c4915c21adabd652ac132b103024df8ff"
+      }
+    },
+    {
+      "asset_id": "char_jonnie",
+      "category": "character",
+      "association": "party \u2014 heavy exoskeleton soldier (Captain Crusher)",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_jonnie",
+        "export": "assets/characters/jonnie.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "armored heavy rig: pauldrons/pack ride arm/torso bones, 12 bones"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "attack",
+        "ability",
+        "guard",
+        "hit",
+        "defeat",
+        "victory",
+        "brace"
+      ],
+      "attachments": [
+        "Socket_Pounder"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jonnie.glb": "dc6c525ae19608aab8641b50ec3b037c8c05cb1d7bce1aea01fcb91f7cafbbb7"
+      }
+    },
+    {
+      "asset_id": "char_sprocket",
+      "category": "character",
+      "association": "enemy \u2014 wind-up chaser (close pressure)",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_sprocket",
+        "export": "assets/characters/sprocket.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "wind-up key + punch telegraph, 9 bones"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "telegraph",
+        "attack",
+        "hit",
+        "defeat"
+      ],
+      "attachments": [
+        "Socket_Impact"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "sprocket.glb": "688dccf319e6e9650c85415439ad94c1021c4077743f1ecbea08825d01477fc3"
+      }
+    },
+    {
+      "asset_id": "char_clanker",
+      "category": "character",
+      "association": "enemy \u2014 heavy slam bot",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_clanker",
+        "export": "assets/characters/clanker.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "double-fist slam telegraph, loose chest plate, 9 bones"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "telegraph",
+        "attack",
+        "hit",
+        "defeat"
+      ],
+      "attachments": [
+        "Socket_Impact"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "clanker.glb": "7ba9ec9d08aa2f43fafb7b935dead5824d5d7e0b4af4b8e56d93c67f90b42aca"
+      }
+    },
+    {
+      "asset_id": "char_gimbal",
+      "category": "character",
+      "association": "enemy \u2014 ranged disc launcher",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_gimbal",
+        "export": "assets/characters/gimbal.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "hover core + spinning gimbal ring + prong spread telegraph, 6 bones"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [
+        "idle",
+        "move",
+        "telegraph",
+        "attack",
+        "hit",
+        "defeat"
+      ],
+      "attachments": [
+        "Socket_Muzzle"
+      ],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "gimbal.glb": "a15db8253dfb895b1e067dfb3baa0c7c81f82a7b504847dba69d876c44d81d0c"
+      }
+    },
+    {
+      "asset_id": "arena_bedroom_floor",
+      "category": "environment",
+      "association": "combat test arena (noncanonical until approved)",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_combat_assets.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_combat_assets.py:build_arena",
+        "export": "assets/characters/arena.glb"
+      },
+      "transform": {
+        "units": "meters",
+        "up_axis": "Y",
+        "scale": 1.0,
+        "grid_cell": 1.0
+      },
+      "geometry": {
+        "note": "toy-scale diorama; vertex-color checker grid; obstacles at rules BLOCKED_CELLS; music box at MUSIC_BOX"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "arena.glb": "973fc235996293340893dcdd41a8eee5cb5d8b10ef9fd476a413cbcd4183e098"
+      }
+    },
+    {
+      "asset_id": "music_combat_theme",
+      "category": "audio",
+      "association": "original loopable combat theme, A minor 140 BPM, 27.4s",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/music/combat_theme.ogg"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "combat_theme.ogg": "456542adfbe683c3ab579a700ae6fdb2aa6abcbd9b0ea9fdeaa85b3fdc65700a"
+      }
+    },
+    {
+      "asset_id": "music_encounter_start",
+      "category": "audio",
+      "association": "encounter stinger",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/music/encounter_start.ogg"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "encounter_start.ogg": "4bba59505fd1b550d0095129f8eeb35c09d76edd75b83b96dc5a97fc805987b0"
+      }
+    },
+    {
+      "asset_id": "music_victory",
+      "category": "audio",
+      "association": "victory stinger",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/music/victory.ogg"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "victory.ogg": "ea2c0298c2382e46f7efc6c6e752f6b8cf82a3e1b02e5398b3ccff1ab240dd4d"
+      }
+    },
+    {
+      "asset_id": "music_defeat",
+      "category": "audio",
+      "association": "defeat stinger",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/music/defeat.ogg"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "defeat.ogg": "9863c375b803910ac6e7b24d06b18516531a7c4eecafbc333d915efe9b261956"
+      }
+    },
+    {
+      "asset_id": "ambience_room",
+      "category": "audio",
+      "association": "room tone + music-box plinks, 8s loop",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/music/ambience.ogg"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ambience.ogg": "e99115763ed0e6cff99fe3ff94c97ac157cc1a90c0e3e9004e883d835896444b"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_move",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_move.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_move.wav": "bd58b1ff45529a5616fb457e30d37a9887e779bb05de4a121aa5b8d9abade377"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_confirm",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_confirm.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_confirm.wav": "88799cde47884e1bd51396380ca86806d3eec73f1d16dd0fe3e8c21200869c6c"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_cancel",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_cancel.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_cancel.wav": "7eb3b90db19ed4169ba935a5afa3df24d0e4fb581ca21e54a6b729b90068fb36"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_deny",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_deny.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_deny.wav": "7ba0dbf7dd40b851e86bf1ff55306897db26f02c08f8afc3610660923df47550"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_open",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_open.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_open.wav": "5ff7eb729522351efbb8364258e5dfb0ff5a4f3a99920dfeb3d94b66f85a4941"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_close",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_close.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_close.wav": "941a8e9bbb6e51d0bc095e75e41fc5116a29992b5b7fe8b66dad58e819d8cc25"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_target",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_target.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_target.wav": "a84038bbda0257e20ba6dc04e5e3ce4a743e0c422bbf92fdb024d88d8a836ef4"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_party",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_party.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_party.wav": "6ad8574bc88d123f81fe9d01080ffbd8bf86c8fb8cb0cd935453c557777c689c"
+      }
+    },
+    {
+      "asset_id": "sfx_ui_pause",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/ui/ui_pause.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ui_pause.wav": "3d4934a9c1d668b31dd90705f28ab8ca18b8383f98cd47c4083800baa5699dbc"
+      }
+    },
+    {
+      "asset_id": "sfx_jayze_attack",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/jayze_attack.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jayze_attack.wav": "39c5cc90b44ef7f0174e0b764943cf7dbcc0831e612fa0dd0e006c6f0a505225"
+      }
+    },
+    {
+      "asset_id": "sfx_jayze_ability",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/jayze_ability.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jayze_ability.wav": "14351ae10cd6cd228210c800a15ff720ce32e87ce394af16c1d3189e9b11ce0d"
+      }
+    },
+    {
+      "asset_id": "sfx_kip_shoot",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/kip_shoot.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "kip_shoot.wav": "04ae96df58bdd6a03371480e1dff5947cdb35c3397a14283d232bed314a96351"
+      }
+    },
+    {
+      "asset_id": "sfx_kip_ram",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/kip_ram.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "kip_ram.wav": "65090bbfba10b603cd461e276181410c813ea504176372f8e9705e405b085b37"
+      }
+    },
+    {
+      "asset_id": "sfx_rallo_claw",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/rallo_claw.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "rallo_claw.wav": "ad7fe721210830e8aeb98b20fe24df460e5a306a5ac8edd466f7c4e7071c08e9"
+      }
+    },
+    {
+      "asset_id": "sfx_rallo_ability",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/rallo_ability.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "rallo_ability.wav": "8598abefb725c89e325148fdf98222acf8f64034960322db7b780440904e926e"
+      }
+    },
+    {
+      "asset_id": "sfx_jonnie_attack",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/jonnie_attack.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jonnie_attack.wav": "3af9835d85ca2ecbbdcc6c8a39dabbe0b5da5893f80ca91322f2f3db5e5e08b5"
+      }
+    },
+    {
+      "asset_id": "sfx_jonnie_ability",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/jonnie_ability.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jonnie_ability.wav": "ecb5704746fd9c7d35e5ea2be3d6e6662148d9623afddd84387c39be4ebdf1f3"
+      }
+    },
+    {
+      "asset_id": "sfx_jonnie_brace",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/jonnie_brace.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "jonnie_brace.wav": "e2a3592fe8d8a4a764088d3db8748f11ec3d0737b872bfeee0507c0d9193e93a"
+      }
+    },
+    {
+      "asset_id": "sfx_impact_light",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/impact_light.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "impact_light.wav": "1c80f3157dec3b983b85039819baec0934946745048f654d4b881cf307773a1c"
+      }
+    },
+    {
+      "asset_id": "sfx_impact_heavy",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/impact_heavy.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "impact_heavy.wav": "9d5f0439c88be273b7c1474045904efb67199d20ea0cf62689a6535aedd265e9"
+      }
+    },
+    {
+      "asset_id": "sfx_guard_block",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/guard_block.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "guard_block.wav": "5258f598bb68ed82167e605e68feab3fb1c8d3c3971e8646c6d46eee8719487b"
+      }
+    },
+    {
+      "asset_id": "sfx_hit_react",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/hit_react.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "hit_react.wav": "35e405955f98719eb54b0648bb89f384653ab60ecb99b7b62b09fd39dd46393a"
+      }
+    },
+    {
+      "asset_id": "sfx_evade",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/evade.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "evade.wav": "f1041611f8d1829b1269eb09669b18fb0af3340e8593e8a8b0ffd79265f9db7d"
+      }
+    },
+    {
+      "asset_id": "sfx_ko_down",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/ko_down.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "ko_down.wav": "dfb9b090778d5b3aebeec95300f528f5ebeb6d440a8f882b18814cf3b0857179"
+      }
+    },
+    {
+      "asset_id": "sfx_telegraph_warn",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/telegraph_warn.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "telegraph_warn.wav": "741997d0481d383383290f2db44fcab4af6c2e024082af314fb6e3126125cab1"
+      }
+    },
+    {
+      "asset_id": "sfx_enemy_attack",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/enemy_attack.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "enemy_attack.wav": "0eb53db44a3976ef4af863c347c212e40063093f0baac064b522245c6a677b76"
+      }
+    },
+    {
+      "asset_id": "sfx_projectile",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/projectile.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "projectile.wav": "bbe5d3aab3ec02407df24e28bedfefa363d3431a05b92e4662f03be5290b5ffc"
+      }
+    },
+    {
+      "asset_id": "sfx_heal",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/heal.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "heal.wav": "0f26faaba3495ee04efea1cae8eb0da79ea7989e0260009adbd569cf127a8345"
+      }
+    },
+    {
+      "asset_id": "sfx_stagger",
+      "category": "audio",
+      "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
+      "reference": null,
+      "source": {
+        "workflow": null,
+        "model": null,
+        "model_version": null,
+        "parameters": {
+          "builder": "tools/build_audio.py",
+          "deterministic": true
+        },
+        "provenance": [
+          "Authored procedurally (Blender 4.5 headless / numpy+ffmpeg synthesis) by goose-desktop 2026-11-05.",
+          "Original content; no third-party or copyrighted sources; no dataset-trained generation used."
+        ]
+      },
+      "license": {
+        "source": "project-original",
+        "identifier": "AllRightsReserved-PlaytimeProtocol (project-internal, owner to finalize)",
+        "commercial_use": "unknown",
+        "evidence": "Original authorship within this repository; owner has not chosen a public license yet."
+      },
+      "files": {
+        "source": null,
+        "editable": "tools/build_audio.py",
+        "export": "assets/audio/sfx/stagger.wav"
+      },
+      "transform": {
+        "units": "seconds",
+        "up_axis": "Y",
+        "scale": 1.0
+      },
+      "geometry": {
+        "note": "synthesized; WAV masters / OGG runtime"
+      },
+      "materials": [
+        {
+          "type": "flat-color principled (proxy look)"
+        }
+      ],
+      "animation": [],
+      "attachments": [],
+      "collision": [],
+      "processing_history": [
+        {
+          "tool": "blender",
+          "version": "4.5.12 LTS",
+          "operation": "headless build + glTF export (GLB, ACTIONS mode)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        },
+        {
+          "tool": "godot",
+          "version": "4.7.2 stable mono",
+          "operation": "import validation (bones/anims/sockets/arena meshes)",
+          "timestamp": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "checks": [
+          "Godot load probe: skeleton bones present",
+          "AnimationPlayer clips present with expected names",
+          "Socket bones present"
+        ]
+      },
+      "approval": "provisional",
+      "version": "1.0.0",
+      "checksums": {
+        "stagger.wav": "1c51af7deb9bdecda0eaece6c85fc086a417203efe57cae870d435c1d4d30885"
+      }
+    }
+  ]
+}
