@@ -23,6 +23,9 @@ A stylized 3D, toy-scale, story-driven JRPG about innocence, consequence, family
 ## Existing local implementation — do not redo it
 Goose's 2026-11-04 handoff reports a runnable deterministic Godot combat prototype, smoke tests, an asset manifest, five ComfyUI API workflows and Python/Blender integrations. These remain **local, reported and pending repository verification/import**; the present GitHub tree does not falsely claim to contain them. See [handoff](docs/production/03_HANDOFF_AND_MIGRATION.md).
 
+## Next production deliverable
+**Complete combat test slice, controller-first with integrated sound.** See [combat slice build specification](docs/design/03_COMBAT_TEST_SLICE.md) and [gamepad/HUD/UI/music/SFX contract](docs/design/04_CONTROLLER_HUD_UI_AUDIO.md). The available Xbox/XInput-style gamepad is the immediate test target; Steam Controller/Steam Input is an eventual release requirement. Sound and music must actually play in-game. Art may be non-final; implementation must be production-quality.
+
 ## Production owner
 **Goose Desktop** is the designated primary implementation agent. OMP's verified work is prior project work to preserve and reuse. Goose must observe active-user resource headroom and avoid concurrent GPU-heavy jobs.
 

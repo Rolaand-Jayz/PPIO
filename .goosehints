@@ -13,3 +13,5 @@ DO NOT launch GPU-heavy tasks while the user is active without explicit authoriz
 PPIO is currently PUBLIC: no private work, personal information, secrets, model weights, raw forensics, large caches or licensed assets should be pushed without an explicit privacy/rights check. The website is archived and must not be republished.
 
 At every meaningful stage: report what is verified, what remains reported-only, exact modified files and tests, blockers, and current safety status. Stop if evidence suggests impending memory pressure or an unsafe repository merge.
+
+CURRENT EXECUTION OBJECTIVE: Build the COMPLETE COMBAT TEST SLICE, not the full game. Read docs/design/03_COMBAT_TEST_SLICE.md and docs/design/04_CONTROLLER_HUD_UI_AUDIO.md. Controller-first (test Xbox-style controller), no mouse needed; keyboard/mouse fully supported; Steam Controller targeted at release. Build functional HUD/UI, music, combat SFX, UI cues, settings and whole battle loop at production-quality execution with expressly NON-FINAL proxy art/audio. Preserve existing battle engine; do not assume FF7 Rebirth mechanics are approved. No unsafe GPU jobs while user active.

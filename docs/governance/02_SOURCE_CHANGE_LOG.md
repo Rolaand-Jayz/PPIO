@@ -27,3 +27,14 @@
 **Downstream:** Goose must switch its working directory to the checked-out PPIO root, fetch updated instructions, protect existing OMP/Goose local work, reconcile/import source instead of recreating it, verify privacy before push, then pass staged headless and monitored asset-pipeline acceptance gates.
 
 **Intentionally unchanged:** No local ComfyUI/Godot program files or settings have been touched by this remote documentation commit. No GPU workload, live interrupt or asset generation has been run; no claim of freeze resolution. The old website remains archived. Making PPIO private and administratively disabling GitHub Pages remain separate account settings actions.
+
+## PP-CHG-0003 — 2026-11-04
+**Confidence:** VERIFIED for repository changes and explicit owner direction; implementation and hardware tests NOT YET PERFORMED.
+
+**Trigger:** Owner requested Goose produce everything needed for a polished, complete combat test with production-grade engineering using non-final assets; explicitly clarified that controller (Xbox-style test now; Steam Controller at release), full HUD/UI, and **music + sound effects** belong in scope. Final Fantasy VII Rebirth is cited as interaction/polish reference.
+
+**Changes:** Added `docs/design/03_COMBAT_TEST_SLICE.md` and `docs/design/04_CONTROLLER_HUD_UI_AUDIO.md`; revised gameplay contract, production pipeline guide, Goose agent/handoff hints, root README, authority index and living decisions to make controller-first whole-loop play and integrated sound non-optional. No final art canon, complete combat model or finished audio composition is implied.
+
+**Downstream:** Goose should inspect and reuse OMP's local prototype, build a controller-only playable battle early, then deliver coherent playable proxies, responsive menus/HUD, SFX, original battle music, audio buses and input parity with documented validation. Use resource-safe/rights-checked pipelines and don't block on unproven ComfyUI runs.
+
+**Intentionally unchanged:** Existing runtime code, ComfyUI, ROCm, drivers, model caches and safety scripts; no actual generation, controller playtest or audio listening test was conducted by this GitHub documentation update.

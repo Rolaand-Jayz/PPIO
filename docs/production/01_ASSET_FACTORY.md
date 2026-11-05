@@ -25,3 +25,6 @@ G0 brief+commercial-use rights → G1 generated outputs parse → G2 geometry/sc
 - The Passage is a noncanonical testing vignette; never move it into story canon without approval.
 
 See [resource safety](02_RESOURCE_SAFETY.md) and [migration](03_HANDOFF_AND_MIGRATION.md).
+
+## Combat slice — sound and interface are deliverables, not later extras
+Read [the combat slice build contract](../design/03_COMBAT_TEST_SLICE.md) and [controller/HUD/audio contract](../design/04_CONTROLLER_HUD_UI_AUDIO.md). Supply coherent, source-traceable proxy UI graphics, menu selection feedback, combat SFX and original loopable music with usable game-audio bus controls. A source WAV or static HUD image on disk is NOT accepted until its Godot event/scene binding, input focus, correct playback/mixing and controller operation have been validated. Prefer lightweight deterministic audio synthesis / rights-cleared original sources if ComfyUI is unstable; do not postpone the battle because GPU-based sound creation is unavailable.

@@ -18,3 +18,5 @@ Read `docs/00_START_HERE.md` and the relevant canonical docs before changes. Goo
 The previously hosted website is archived only. Do not restore public Pages or add new site files to `main` without approval.
 
 **Live-job safety update:** Goose reports `tools/comfy_guard.sh` now exists locally; its no-job and error paths were checked but not its live interrupt under GPU pressure. See the reconciled five-run memory evidence in `docs/production/02_RESOURCE_SAFETY.md`. Neither resource monitoring nor the current ComfyUI flags guarantee freeze prevention.
+
+**Current priority — combat test slice:** Read `docs/design/03_COMBAT_TEST_SLICE.md` and `docs/design/04_CONTROLLER_HUD_UI_AUDIO.md` before working on the combat feature. Controller is the primary input: the current test is an Xbox-style gamepad, mouse+keyboard are secondary but fully supported, Steam Controller compatibility is later. Full gamepad HUD/UI navigation and integrated **original music, SFX, UI sound and bus mixing** are mandatory. Do not defer sound as cosmetic work. FF7 Rebirth is a UX reference only, not a license to reproduce audio/UI or silently replace battle rules.

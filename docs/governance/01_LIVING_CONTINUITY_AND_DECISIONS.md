@@ -15,6 +15,10 @@ A living record of **approved story reality and verified implementation**, disti
 | PP-D008 | Operational safety | Active-user headroom, sequential ComfyUI jobs, continuous lightweight pressure monitoring |
 | PP-D009 | Explicit repository destination | `Rolaand-Jayz/PPIO`, canonical branch `main`; Goose must use the game monorepo, not an archived website or unrelated repo |
 | PP-D010 | Operational evidence boundary | Goose's reported guard and DynamicVRAM matrix are incomplete live validation; no successful ComfyUI generation claimed |
+| PP-D011 | Owner-approved production milestone | Build complete combat slice with production-quality implementation using explicitly non-final proxy visual/audio assets |
+| PP-D012 | Owner-approved input priority | Controller-first throughout UI, HUD and gameplay; Xbox-style controller is current test, keyboard/mouse fully functional secondary; Steam Controller future release target |
+| PP-D013 | Owner-approved audio scope | Original battle music, combat SFX, UI audio, ambience where useful, and controllable runtime mixing are mandatory for combat-test acceptance |
+| PP-D014 | UX reference boundary | FF7 Rebirth is a polish/interface reference, not approval to import its battle system or copy copyrighted designs/audio |
 
 ## Continuity cells to maintain as scenes lock
 - Scene ID, location and timestamp/ordering; active toys and vantage.
