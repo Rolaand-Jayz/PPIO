@@ -83,3 +83,12 @@
 **Changes:** Simplified the deferred Goose optimization plan and decision/testing protocol. Goose now has autonomy to make small safe project-local changes and use targeted tests instead of four formal review stages and a full ten-test matrix. Owner and ChatGPT remain reasoning partners for consequential design, safety and final setup choices. GLM-5.3 Flash remains the intended default, with selective GLM-5.3 escalation.
 
 **Unchanged:** R1 non-destruction/repo rules, R2 system/user protection, R3 persistent safe delivery; actual Godot/Blender/ComfyUI/audio integration, originality and technical quality requirements; separate post-combat owner start prompt. No gameplay, assets, workflows or runtime modified.
+
+## PP-CHG-0009 — 2026-11-05
+**Confidence:** VERIFIED owner clarification and GitHub documentation change; no Goose runtime or model configuration changed.
+
+**Trigger:** Owner clarified that testing is part of development work itself, not a separate benchmark or artificial test exercise.
+
+**Changes:** Updated deferred Goose specialization and joint decision protocol to use real Playtime Protocol tasks as integration tests, recording concise pass/fail evidence and retaining only essential non-destructive/safety preflights. Removed standalone fixture and benchmarking requirements for routine optimization.
+
+**Unchanged:** The three resilience laws, safety resource gates, real gameplay/import/audio/rig/continuity acceptance, owner review of creative direction, and the separate post-combat owner prompt. Untested capabilities must be labeled NOT TESTED rather than manufactured as passing.

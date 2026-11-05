@@ -8,7 +8,7 @@
 ## Who does what
 **Owner + ChatGPT:** Reason together about major architecture, creative direction, safety trade-offs and the final preferred setup. ChatGPT advises; the owner decides. We do **not** have to approve every small technical choice or watch each test.
 
-**Goose:** Builds and tests. Has room to choose tools, implement project-local skills/recipes, correct bugs, run small benchmarks, and keep useful improvements **without waiting for a committee meeting**. Bring us only consequential decisions: global/security/cost changes, major architecture swaps, unresolved canon, unsafe hardware work or trade-offs that meaningfully change the project.
+**Goose:** Builds and tests. Has room to choose tools, implement project-local skills/recipes, correct bugs, validate improvements through the actual game tasks they enable, and keep useful improvements **without waiting for a committee meeting**. Bring us only consequential decisions: global/security/cost changes, major architecture swaps, unresolved canon, unsafe hardware work or trade-offs that meaningfully change the project.
 
 Review reports and GitHub files when the owner brings them to ChatGPT. There is no automatic live ChatGPT-to-Goose channel.
 
@@ -17,28 +17,20 @@ Review reports and GitHub files when the owner brings them to ChatGPT. There is 
 
 **Model default:** GLM-5.3 Flash for the vast majority of coding, file edits, project scripts, asset metadata, integration and ordinary debugging. Selectively use GLM-5.3 for hard architecture, safety/complex failures, gameplay/canon conflicts or originality reviews. Verify actual provider IDs and cost before routing. No double-model review on every edit. GLM-5.5 is only a future candidate; test it when it actually becomes available, never switch blindly.
 
-## Build-and-check loop
-1. **Inspect:** In the installed Goose version, see which relevant extensions/skills/recipes/hooks already exist and what works with this project. Identify the one or two biggest bottlenecks; no inventory project for its own sake.
-2. **Make one reversible improvement:** Project-scoped configuration, a small recipe, a skill or a tool adapter; preserve the working baseline.
-3. **Prove it on a real small task:** Use an appropriate fixture from the project and a clear pass/fail condition. Collect just enough evidence to show it works; note latency/resource usage if meaningful.
-4. **Keep or revert:** If it saves repeated effort or improves reliability without new risks, keep it. If it adds overhead, confuses tools, breaks editor integration or increases crash risk, remove the change cleanly.
-5. **Move to the next useful improvement:** No giant test campaign before delivering value.
+## Test in the work, not beside the work
+There is **no separate benchmark project, mandatory test matrix, or artificial trial campaign**. Optimization happens when Goose is building a real Playtime Protocol feature:
 
-## Small practical test set
-Choose tests that match what changed, **not all tests for every extension**:
+1. Notice an actual point of friction while editing a Godot scene, exporting a Blender rig, invoking the existing ComfyUI pipeline, managing original sound, or checking canon.
+2. Make a single small reversible improvement to the relevant skill, recipe, adapter, extension or model-routing decision.
+3. Use the improvement **on that same real feature**. Verify the actual feature's usual acceptance: Godot import, runtime state, animation and socket playback, audio event, controller behavior, continuity, or other relevant outcome.
+4. If it makes the work more reliable or faster without new costs or resource risk, keep it. If not, revert and use the proven method.
+5. Record a short note on what changed and whether it worked. Do not stop development to assemble metrics or a formal scorecard.
 
-| Improvement | Quick test |
-| --- | --- |
-| Godot Editor / code adapter | Inspect a real scene and run a safe isolated edit + headless import without touching the user's open unsaved scene |
-| Blender rig/animation bridge | Export a small rig/animated fixture to GLB and verify its Godot import and playback |
-| ComfyUI API integration | Health/schema/provenance/cancel-path check; no heavy generation while active |
-| Controller/UI/audio workflow | Narrow InputMap, menu focus and audio event test, with real controller/listening marked untested unless performed |
-| Canon/continuity skill | Catch a deliberately invalid CJ POV or house-geometry reference |
-| Originality/quality checker | Reject a recolor-only or copy-paste enemy while explaining the structural similarity |
-| Checkpoint/recovery | Interrupt a harmless fixture and resume without redoing completed outputs |
-| Resource guard | Simulate ACTIVE/pressure conditions; refuse unsafe heavy tasks without actual GPU stress |
+Necessary precautions are **not optional**: before a risky new adapter, ensure reversible files and safe process boundaries; before GPU work, preserve the resource/idle checks; before an unsafe/global/paid operation, obtain authorization. These are safeguards, not a detached test program.
 
-One successful targeted test plus sensible failure handling usually suffices for a small improvement. Require more only if the risk warrants it. Don't manufacture an aggregate scorecard.
+Example: while making Kip's combat rig, Goose can improve the Blender → GLB → Godot recipe and confirm it from Kip's real imported animation. No extra dummy rig is required. Likewise, when a genuine task needs an audio cue, confirm it actually plays on the game event; when ComfyUI is used, validate that specific authorized asset job and memory recovery rather than running a gratuitous model benchmark.
+
+A capability not yet invoked in real work remains **NOT TESTED**, not a defect and not a license to manufacture work. The owner and ChatGPT review consequential decisions and actual outputs as they arise, not routine improvements.
 
 ## Three nonnegotiable resilience laws
 **R1 — Preserve work and follow repo rules.** No destructive Git/filesystem shortcuts, leaked secrets, fake canon approval or loss of functioning assets.
@@ -48,6 +40,6 @@ One successful targeted test plus sensible failure handling usually suffices for
 **Quality is not expendable for speed.** Keep the distinctive design and production quality gates: no generic/samey party members, enemies, animation, HUD, audio or encounters. Prove important differences through actual mechanisms, silhouettes, movement, behavior and sounds. Only owner approves artistic direction, but Goose can build and refine candidates autonomously.
 
 ## What to send back after the optimization
-Keep it short: **what you changed, why it helped, a few test outcomes, what you rejected, what still needs owner input, and how to undo the changes.** Provide actual working commands and paths. We review the overall setup together and adjust the handful of choices that matter.
+Keep it short: **what you changed, why it helped, real work outcomes, what you rejected, what still needs owner input, and how to undo the changes.** Provide actual working commands and paths. We review the overall setup together and adjust the handful of choices that matter.
 
 Don't start another campaign-wide design task or lock game length/encounter frequency without approval. Do not begin specialization until the owner prompts you after combat completion.

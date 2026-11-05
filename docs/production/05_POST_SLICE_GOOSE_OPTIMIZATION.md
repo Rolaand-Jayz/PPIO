@@ -5,7 +5,7 @@
 **Local project:** `/mnt/workdrive/playtime-protocol-godot-comfy-blender`. Verify its Git root/remotes and protect dirty files.  
 **Canonical monorepo:** `https://github.com/Rolaand-Jayz/PPIO.git`, branch `main`.
 
-**Decision style:** Goose is the fast implementer, the owner and ChatGPT are reasoning partners for major decisions. Goose should **just make small safe improvements**, test them and keep what works. No approval ceremony for every skill or extension. Read [the streamlined decision and testing approach](07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md).
+**Decision style:** Goose is the fast implementer, the owner and ChatGPT are reasoning partners for major decisions. Goose should **just make small safe improvements and validate them as part of actual development work**. Keep what works. No approval ceremony for every skill or extension. Read [the streamlined decision and testing approach](07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md).
 
 ## Optimize for actual production work
 
@@ -15,7 +15,7 @@
 
 **3. Add a few useful project skills, not dozens.** Choose small load-on-demand procedures for Godot gameplay/controller/HUD, Blender rigs and animations, asset pipeline, story/continuity, original audio/UI and quality/testing. Use installed-version-compatible locations and schemas. Don't clone canon into prompt memory; link to approved PPIO documents.
 
-**4. Write short repeatable recipes** for work Goose does repeatedly: safe feature edit + test; Blender → GLB → Godot import; guarded ComfyUI job when authorized; combat/audio/controller QA; checkpoint and resume. Explicit error handling, source paths, output manifests and rollback. Only enable needed extensions. Test each recipe on a small fixture once.
+**4. Write short repeatable recipes** for work Goose does repeatedly: safe feature edit + test; Blender → GLB → Godot import; guarded ComfyUI job when authorized; combat/audio/controller QA; checkpoint and resume. Explicit error handling, source paths, output manifests and rollback. Only enable needed extensions. **Validate each recipe the first time the real project needs it**, rather than creating a separate test assignment.
 
 **5. Build resilience into the everyday workflow.** Honor [three laws and fallback ladder](../governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md). Keep write ownership serial, one heavy GPU job maximum, lightweight active-user and memory checks, bounded retries, safe fallbacks, and durable checkpoints. Never delete other work or overwrite editor-unsaved scenes. Never use background busy loops or promise work while a session is not running.
 
@@ -23,9 +23,12 @@
 
 **7. Model routing:** GLM-5.3 Flash is the default for fast/efficient execution; GLM-5.3 only when complexity, safety or repeated failures justify deeper reasoning. Verify installed provider IDs and actual usage. GLM-5.5 later only after a practical comparison if available. No expensive redundant reviewer trees; no local GPU LLM competing with ComfyUI.
 
-**8. Keep improvements tiny and reversible.** Make one change, run the one or two relevant checks, keep/revert, move on. Use project-scoped config and trusted tools; no unapproved purchases, security/privacy changes, privileged installs or heavy GPU tests while user ACTIVE. Avoid growing an always-on tool collection.
+**8. Keep improvements tiny and reversible.** Make one change during real work, run its relevant existing feature/import/regression checks, keep/revert, move on. Use project-scoped config and trusted tools; no unapproved purchases, security/privacy changes, privileged installs or heavy GPU tests while user ACTIVE. Avoid growing an always-on tool collection.
+
+## Validation happens inside the work
+There is **no standalone benchmark campaign, synthetic demonstration suite, or mandatory extra testing phase** for routine specialization. Goose makes an improvement when a real Playtime Protocol feature needs it, checks whether that feature actually works, and continues. A newly added Blender skill proves itself on a real rig; Godot automation on a real scene; ComfyUI integration on an authorized real asset job; checkpointing during real session handoff. Record the outcome, not a lengthy scorecard. Retain only minimum isolated preflight checks needed to avoid data loss, unauthorized changes or a workstation crash. Never run a dangerous experiment to "prove" safety. A feature requiring controller, listening or aesthetic judgment is NOT TESTED until the relevant real check or owner review happens.
 
 ## Deliverable
-Leave a working, **simpler** Goose project setup. Report briefly: installed and removed capabilities, what they enable, what was tested, any trade-offs, safety check results, remaining owner decisions, and how to roll back. Prove at least one full low-cost cross-tool path and one checkpoint/resume fallback. For major architectural choices or final permanent setup, present the options to the owner and ChatGPT for a quick reasoned decision.
+Leave a working, **simpler** Goose project setup. Report briefly: installed and removed capabilities, what they enabled in the actual game workflow, pass/fail outcomes from real work, trade-offs, remaining owner decisions, and how to roll back. **No separate benchmark or demonstration project is required.** The first real cross-tool task and real recovery incident serve as integration evidence when they occur; if not yet exercised, label NOT TESTED rather than manufacturing a test. For major architectural choices or final permanent setup, present the options to the owner and ChatGPT for a quick reasoned decision.
 
 **Keep it practical. Finish the combat slice first. Do not automatically launch this phase.**
