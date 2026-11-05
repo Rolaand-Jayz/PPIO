@@ -26,6 +26,11 @@ Goose's 2026-11-04 handoff reports a runnable deterministic Godot combat prototy
 ## Next production deliverable
 **Complete combat test slice, controller-first with integrated sound.** See [combat slice build specification](docs/design/03_COMBAT_TEST_SLICE.md) and [gamepad/HUD/UI/music/SFX contract](docs/design/04_CONTROLLER_HUD_UI_AUDIO.md). The available Xbox/XInput-style gamepad is the immediate test target; Steam Controller/Steam Input is an eventual release requirement. Sound and music must actually play in-game. Art may be non-final; implementation must be production-quality.
 
+## Local implementation location
+Owner-supplied local source workspace: `/mnt/workdrive/playtime-protocol-godot-comfy-blender`. **Verify its Git root and remote before reconciling with canonical `Rolaand-Jayz/PPIO` on `main`; no assumption of existing synchronization.**
+
+After the playable combat slice is completed, Goose has a separate queued [project-specific harness optimization plan](docs/production/05_POST_SLICE_GOOSE_OPTIMIZATION.md) for skills, recipes, extensions, roles, hooks and context/resource management. This task is deferred, not a reason to interrupt combat implementation.
+
 ## Production owner
 **Goose Desktop** is the designated primary implementation agent. OMP's verified work is prior project work to preserve and reuse. Goose must observe active-user resource headroom and avoid concurrent GPU-heavy jobs.
 

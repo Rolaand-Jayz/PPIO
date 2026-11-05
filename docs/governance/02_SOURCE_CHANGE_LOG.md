@@ -45,3 +45,12 @@
 **Trigger:** Owner explicitly required rigging and animation to be included in the production-quality non-final combat test.
 
 **Changes:** Added docs/design/05_RIGGING_AND_ANIMATION.md and strengthened combat test, asset factory and Goose hints to require proper character-specific rigs, editable sources, real Godot animations/state transitions, attack/hit/audio/visual synchronization and validation. No final artistic canon or campaign-wide contributor/pacing rules established; no runtime, driver or safety changes made.
+
+## PP-CHG-0005 — 2026-11-04
+**Confidence:** VERIFIED owner-supplied local path, explicit post-slice optimization directive, and GitHub document change; local tool/config state NOT inspected by this remote update.
+
+**Trigger:** Owner requested Goose specialize itself using available extensions, skills, recipes, agents, apps and underlying controls after finishing combat slice, and identified the local project folder as `/mnt/workdrive/playtime-protocol-godot-comfy-blender`.
+
+**Changes:** Added `docs/production/05_POST_SLICE_GOOSE_OPTIMIZATION.md`; linked deferred task from `.goosehints`, root `AGENTS.md`, README, authority index and Goose repo handoff. Reinforced that local workspace and PPIO remote are separate identifiers until verified and reconciled.
+
+**Scope/constraints:** Audit actual installed Goose build; add scoped validated capabilities only after combat-test completion, with resource safety and no new costs/privacy exposure. Contributor governance, total game length, section and encounter pacing, final story/asset approvals remain reserved for owner discussion. No code generation, driver/config changes, local files or GPU work were executed here.

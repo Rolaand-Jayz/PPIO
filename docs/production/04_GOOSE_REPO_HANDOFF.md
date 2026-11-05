@@ -4,7 +4,9 @@
 
 `https://github.com/Rolaand-Jayz/PPIO.git`
 
-Canonical branch: `main`. **The `archive/showcase-2026-11-04` branch is solely the historic six-page website, never the game implementation target.**
+Canonical branch: `main`.
+
+**Owner-supplied local project folder: `/mnt/workdrive/playtime-protocol-godot-comfy-blender`.** This is the first local working tree to inspect, **not proof of its current Git root/remote**. Preserve its existing contents and history when reconciling with PPIO. See the deferred [Goose optimization assignment](05_POST_SLICE_GOOSE_OPTIMIZATION.md) after the complete combat slice is delivered. **The `archive/showcase-2026-11-04` branch is solely the historic six-page website, never the game implementation target.**
 
 ## Immediate Goose action: establish location, not a new project
 1. Identify the current working directory and its nearest Git root. Inspect `git rev-parse --show-toplevel`, `git status --short`, `git remote -v`, `git branch -vv`, and `git log -1 --oneline`, using read-only operations first.
