@@ -1,0 +1,25 @@
+name: Governance docs (lightweight)
+on:
+  push:
+    paths:
+      - "*.md"
+      - ".goosehints"
+      - "docs/**"
+      - "tools/check_governance.py"
+      - ".github/workflows/governance-docs.yml"
+  pull_request:
+    paths:
+      - "*.md"
+      - ".goosehints"
+      - "docs/**"
+      - "tools/check_governance.py"
+      - ".github/workflows/governance-docs.yml"
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required documents and links
+        run: python3 tools/check_governance.py

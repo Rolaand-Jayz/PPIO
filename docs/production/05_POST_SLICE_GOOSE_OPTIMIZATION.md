@@ -1,6 +1,6 @@
 # Post-combat-slice Goose specialization and optimization
 
-**STATUS: QUEUED — DO NOT EXECUTE WHILE BUILDING THE COMBAT SLICE.**
+**STATUS: QUEUED — DO NOT EXECUTE WHILE BUILDING THE COMBAT SLICE OR WITHOUT A NEW, EXPLICIT OWNER HANDOFF PROMPT.**
 
 **Owner-provided local project folder:** `/mnt/workdrive/playtime-protocol-godot-comfy-blender`  
 **Canonical GitHub monorepo:** `https://github.com/Rolaand-Jayz/PPIO.git`  
@@ -11,10 +11,13 @@ The local path is a working location, **not proof that its current Git remote or
 ## Entry condition
 Only begin **after the existing combat test slice reaches its recorded completion/QA milestone**: complete controller-first encounter and HUD, four party and 2–3 enemy rigs with real Godot animations, environment, VFX, original music and SFX, victory/defeat/restart, tested integrations, and transparent manual-test limitations. If the owner still needs to test the physical controller or listen to audio, explicitly report WAITING FOR OWNER VALIDATION; do not mislabel untested checks as PASS. This optimization is **the next phase**, not a parallel effort.
 
+## Adopt approved contributor laws and quality gates
+The repo now has an explicit [contributor standard](../../CONTRIBUTING.md), [resilience laws](../governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md), [current-slice transition](../governance/05_VERTICAL_SLICE_TRANSITION.md), [distinctive-design quality gates](../design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md) and [toolchain integration requirements](06_TOOLCHAIN_INTEGRATION_CONTRACT.md). Your specialization must **implement practical, tested support** for these existing rules rather than rewriting them or replacing owner decisions. The rules apply now to normal contributions; this **automated specialization** starts only after a separate owner prompt.
+
 ## Mission
 Goose Desktop will inspect its *actual installed version* and optimize **itself for long-term Playtime Protocol development**, not only combat. Evaluate native features and supported extensions, MCP tools, project skills, custom agents/roles, portable recipes, lifecycle hooks, persistent context, model/provider routing, optional desktop/MCP Apps and process/resource controls. Implement only improvements that have an observable quality, reliability, efficiency or safety benefit.
 
-**Boundaries:** Do not invent or lock global contributor rules, campaign length, section duration, encounter density, combat pacing, narrative structure, final design or progression numbers. These remain under separate owner discussion. Do not incur costs, enable background schedules, install untrusted/privileged components, alter system-wide drivers/packages, compromise security, or switch GPU-heavy model workloads on while the user is ACTIVE without express authorization.
+**Boundaries:** Do not rewrite established contributor laws or invent numeric campaign length, section duration, encounter density, combat pacing, narrative structure, final design or progression numbers. These remain under separate owner discussion. Do not incur costs, enable background schedules, install untrusted/privileged components, alter system-wide drivers/packages, compromise security, or switch GPU-heavy model workloads on while the user is ACTIVE without express authorization.
 
 ## 1 — Audit and baseline
 - Confirm Goose Desktop/CLI version, capabilities and configuration paths against *official documentation for the installed build*. Do not assume the latest docs describe current installed behavior.
@@ -44,7 +47,10 @@ Candidate focused roles if supported: Gameplay Engineer, Technical Artist, Narra
 
 Candidate recipes: combat-change-and-regress; asset-generate-normalize-import; rig-animate-validate; story-change-impact-audit; audio-UI-test; project-checkpoint-and-resume. Each recipe must define inputs, allowed tools/extensions, bounded workload/turns, required tests, PASS/BLOCKED/FAIL outputs and rollback. For explicit `extensions` lists verify essential platform tools (e.g., Summon when delegation is needed) stay available. Do not schedule unattended recipes.
 
-## 4 — Extensions, MCP and hooks
+## 4 — First-class editor and production integrations
+The optimized harness must verifiably interact with the installed **Godot Editor and headless/runtime**, **Blender**, **existing guarded ComfyUI instance**, **audio source and in-engine mixing tools**, **Git/asset manifests** and **test/QA systems**. Follow [the toolchain integration contract](06_TOOLCHAIN_INTEGRATION_CONTRACT.md); ensure editor scene inspection, imported rig/animation playback and audio events are real capabilities, not a list of installed plugins. Prefer existing local adapters if they are better than new MCP tools. Validate non-destructively on a test fixture and with version-matched APIs; no GPU-heavy testing while active.
+
+## 4A — Extensions, MCP and hooks
 - Inspect built-in Developer, Git, Skills/Summon, extension management and other already-working capabilities first. Avoid installing redundant Godot, Blender or ComfyUI extensions when a local scripted adapter is more reliable.
 - If a validated gap exists, investigate official/maintained Godot tooling, a Blender bridge, a lightweight ComfyUI API MCP, audio analysis tools, and a canon/file indexing utility. Prefer narrowly scoped permissions, pinned trusted versions, localhost-only interfaces, and no credential exposure.
 - Add **project-scoped**, reviewable hooks only where they make a measurable difference: before-commit secret/license check; after relevant edit a small syntax/manifest check; checkpoint after a session. Make hooks bounded, nonrecursive, idempotent, disableable and tested on harmless fixtures. Never run the whole asset pipeline or memory-heavy validation from a global hook.
@@ -63,4 +69,4 @@ Candidate recipes: combat-change-and-regress; asset-generate-normalize-import; r
 
 **Definition of done:** A fresh Goose session in the correctly reconciled PPIO-linked local folder can discover task-relevant skills and tools, run a project recipe, preserve canon and work already completed, execute a bounded QA test, checkpoint progress and respect workstation headroom. Improvements must be demonstrable; merely adding tools does not count.
 
-**Do not begin the next game-development assignment or expand project governance without the owner's separate instruction.**
+**Do not automatically activate this post-slice plan merely because a build reports completion. Wait for the owner's explicit handoff prompt. Do not begin the next game-development assignment or rewrite established governance without the owner's separate instruction.**

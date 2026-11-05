@@ -19,6 +19,12 @@ A living record of **approved story reality and verified implementation**, disti
 | PP-D012 | Owner-approved input priority | Controller-first throughout UI, HUD and gameplay; Xbox-style controller is current test, keyboard/mouse fully functional secondary; Steam Controller future release target |
 | PP-D013 | Owner-approved audio scope | Original battle music, combat SFX, UI audio, ambience where useful, and controllable runtime mixing are mandatory for combat-test acceptance |
 | PP-D014 | UX reference boundary | FF7 Rebirth is a polish/interface reference, not approval to import its battle system or copy copyrighted designs/audio |
+| PP-D015 | Approved contributor law R1 | Preserve work and history, follow repo-level rules, owner approvals, licensing and privacy; no destructive shortcuts |
+| PP-D016 | Approved contributor law R2 | Protect machine stability and uninterrupted user activity; throttle, switch task or checkpoint rather than force unsafe work |
+| PP-D017 | Approved contributor law R3 | Persist toward the goal with bounded alternatives and durable checkpoints, never overriding R1/R2 or explicit stop |
+| PP-D018 | Owner-required quality gate | Distinctive, high-quality physical/mechanical/visual/audio/gameplay identity with observable cross-project comparison, hard reject tests and owner slice acceptance |
+| PP-D019 | Project planning control | Section/encounter duration and distribution must be planned/measured; numeric full-campaign targets remain TBD until owner approval |
+| PP-D020 | Post-slice harness requirement | After explicit separate owner prompt, specialize Goose across real Godot Editor/runtime, Blender, guarded ComfyUI, audio and QA tools; not before combat completion |
 
 ## Continuity cells to maintain as scenes lock
 - Scene ID, location and timestamp/ordering; active toys and vantage.

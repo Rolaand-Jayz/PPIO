@@ -20,6 +20,9 @@
 8. **Full character-specific rigging and actual in-engine animations** for all party and enemy proxies: articulated toy skeletons/mechanical pivots, weights, sockets, editable Blender rigs, named clips, Godot animation states and event synchronization. Engine-side gameplay remains authoritative for timing/damage/targeting. See [mandatory rig/animation contract](05_RIGGING_AND_ANIMATION.md).
 9. Validated, reversible asset pipeline and build/run instructions; tests, captures, manifest, licenses, provenance and known non-final decisions.
 
+## Originality and finish standard
+**Mandatory:** follow [distinctive-design and quality gates](07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md) and [current-slice adaptation](../governance/05_VERTICAL_SLICE_TRANSITION.md). Each major character/enemy/arena/UI/audio family must communicate an internally distinct toy-world identity in silhouette, physical construction, motion, combat function, and sound. Do not use generic AI defaults, 3 recolored enemies, copy-paste animations or generic fantasy/UI motifs. Produce a bounded identity/contrast comparison and owner review for **ACCEPTED FOR SLICE**, not final art approval. Preserve previous good artifacts and remedy deficiencies incrementally; reducing scope is preferable to passing low-quality assets, but the four-party / 2–3 enemy acceptance minimum is not waived.
+
 ## Scope protections
 - No full campaign, overworld, story cutscene production, finalized Unknown designs, or final character likeness.
 - Don't reinvent OMP's existing Godot scene, ComfyUI wrappers, graph templates, Blender exporters, safety tools or asset registry. First map/check/reuse what exists.

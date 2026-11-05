@@ -29,7 +29,10 @@ Goose's 2026-11-04 handoff reports a runnable deterministic Godot combat prototy
 ## Local implementation location
 Owner-supplied local source workspace: `/mnt/workdrive/playtime-protocol-godot-comfy-blender`. **Verify its Git root and remote before reconciling with canonical `Rolaand-Jayz/PPIO` on `main`; no assumption of existing synchronization.**
 
-After the playable combat slice is completed, Goose has a separate queued [project-specific harness optimization plan](docs/production/05_POST_SLICE_GOOSE_OPTIMIZATION.md) for skills, recipes, extensions, roles, hooks and context/resource management. This task is deferred, not a reason to interrupt combat implementation.
+After the playable combat slice is completed, Goose has a separate queued [project-specific harness optimization plan](docs/production/05_POST_SLICE_GOOSE_OPTIMIZATION.md) for skills, recipes, extensions, roles, hooks and context/resource management. This task is deferred until the combat slice is done **and the owner explicitly sends its execution prompt**; it must not interrupt combat implementation.
+
+## Contributor quality and resilience rules
+All contributors and agents must follow [CONTRIBUTING.md](CONTRIBUTING.md), the [non-destructive resilience laws](docs/governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md), the [distinctive-design quality gates](docs/design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md), and the [actual Godot/Blender/ComfyUI integration contract](docs/production/06_TOOLCHAIN_INTEGRATION_CONTRACT.md). New major features need distinct physical and mechanical identity, reliable playable integration, honest QA, and owner acceptance. The current combat slice adopts these via [a non-destructive transition](docs/governance/05_VERTICAL_SLICE_TRANSITION.md).
 
 ## Production owner
 **Goose Desktop** is the designated primary implementation agent. OMP's verified work is prior project work to preserve and reuse. Goose must observe active-user resource headroom and avoid concurrent GPU-heavy jobs.

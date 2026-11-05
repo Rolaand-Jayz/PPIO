@@ -9,6 +9,14 @@ This is the operational index for **Playtime Protocol: Innocence Lost**. It deli
 4. [Production pipeline](production/01_ASSET_FACTORY.md), [resource safety](production/02_RESOURCE_SAFETY.md), [local handoff](production/03_HANDOFF_AND_MIGRATION.md), [Goose's canonical repository/acceptance handoff](production/04_GOOSE_REPO_HANDOFF.md), and [DEFERRED post-combat Goose optimization](production/05_POST_SLICE_GOOSE_OPTIMIZATION.md).
 5. Working implementations, test proxies, illustrations, old concept-site text, speculative tasks.
 
+## Binding contributor quality and resilience
+- [Contributing standard](../CONTRIBUTING.md)
+- [Ordered resilience laws R1–R3](governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md)
+- [Non-destructive current-slice transition](governance/05_VERTICAL_SLICE_TRANSITION.md)
+- [Campaign section scope and pacing plan (numbers still unapproved)](design/06_CAMPAIGN_SCOPE_AND_PACING_FRAMEWORK.md)
+- [Distinctive design / anti-sameness and quality review](design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md)
+- [Godot Editor, Blender, ComfyUI, audio and QA integration requirements](production/06_TOOLCHAIN_INTEGRATION_CONTRACT.md)
+
 ## Governance
 - [Acceptance/locking rules](governance/03_APPROVAL_AND_LOCKING_STANDARD.md)
 - [Living continuity and decisions](governance/01_LIVING_CONTINUITY_AND_DECISIONS.md)

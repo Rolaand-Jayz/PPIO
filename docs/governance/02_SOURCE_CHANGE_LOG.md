@@ -54,3 +54,14 @@
 **Changes:** Added `docs/production/05_POST_SLICE_GOOSE_OPTIMIZATION.md`; linked deferred task from `.goosehints`, root `AGENTS.md`, README, authority index and Goose repo handoff. Reinforced that local workspace and PPIO remote are separate identifiers until verified and reconciled.
 
 **Scope/constraints:** Audit actual installed Goose build; add scoped validated capabilities only after combat-test completion, with resource safety and no new costs/privacy exposure. Contributor governance, total game length, section and encounter pacing, final story/asset approvals remain reserved for owner discussion. No code generation, driver/config changes, local files or GPU work were executed here.
+
+## PP-CHG-0006 — 2026-11-04
+**Confidence:** VERIFIED for explicit owner mandates and GitHub document updates; local run, hardware, editor and subjective review still NOT TESTED.
+
+**Trigger:** Owner approved three ordered contributor resilience laws: (R1) no destruction/always follow repo-level rules; (R2) never crash the workstation or interfere with the user; (R3) persist and get the approved goal done without violating R1/R2. Owner required future Goose specialization to use Godot Editor, Blender, ComfyUI and relevant tools, plus concrete guards against generic, homogenized and low-quality AI design. Owner will send the specialization prompt separately after combat completion.
+
+**Changes:** Added root CONTRIBUTING.md, governance laws and non-destructive current-slice transition, campaign scope/pacing framework (approval process only, numeric targets open), integrated toolchain contract, distinctive-design quality gates, identity/review and section templates, PR checklist, bounded Markdown governance checker and CI workflow. Linked relevant documents from agent instructions, README, specs and authority index; recorded owner decisions. Revised deferred Goose specialization to explicitly honor existing rules, actual editor/Blender/ComfyUI/audio operation and separate start authorization.
+
+**Immediate effect:** Contributors must preserve existing work, protect the user/system, pursue safe alternatives, and reject structurally samey or technically broken game assets and encounters. Current combat slice adapts incrementally rather than being rebuilt or automatically failed for new paperwork. Owner review is required for design identity acceptance.
+
+**Intentionally unchanged:** Godot code and running editor, Blender, ComfyUI flags/models, machine settings, local project files and remote configuration. No driver/GPU tests, actual skill/recipe installations, complete controller playthrough or art/audio subjective acceptance were performed by this documentation change. No campaign length/section/encounter minute quotas were invented. CI verifies file presence/links only; cannot judge art or runtime correctness.
