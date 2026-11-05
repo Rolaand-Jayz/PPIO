@@ -17,7 +17,7 @@
 5. A complete start → encounter → understandable input/action selection → damage/defense/status feedback → victory/defeat → replay/restart loop. Player can accomplish **every action with a gamepad alone**.
 6. Controller-first HUD/UI including command menus, party/status displays, selection and targeting, on-screen prompts, focus movement, pause/settings, result screen and restart. Mouse/keyboard have full feature parity but are secondary for UX decisions.
 7. Original/rights-cleared music, functional SFX, UI audio, impact and ability sounds, toy/material cues, environmental ambience and functional mixing controls. Sound must be heard correctly at runtime, not merely exist as files.
-8. Clean animation and visual response for normal action, role-defining move, hit reaction, defense and downed state for each proxy. Engine-side gameplay remains authoritative for timing/damage/targeting.
+8. **Full character-specific rigging and actual in-engine animations** for all party and enemy proxies: articulated toy skeletons/mechanical pivots, weights, sockets, editable Blender rigs, named clips, Godot animation states and event synchronization. Engine-side gameplay remains authoritative for timing/damage/targeting. See [mandatory rig/animation contract](05_RIGGING_AND_ANIMATION.md).
 9. Validated, reversible asset pipeline and build/run instructions; tests, captures, manifest, licenses, provenance and known non-final decisions.
 
 ## Scope protections
@@ -32,7 +32,7 @@
 
 **P1 — Controller-first playable graybox:** Finish battle flow and a usable XInput-compatible controller mapping, UI focus, menu and combat feedback using authored geometry and lightweight temporary sounds. Test a complete controller-only battle now; don't defer input until after generated art.
 
-**P2 — Production-quality proxies:** Integrate four party and 2–3 enemy visual/animation proxies, one arena, readable effects and coherent HUD style. Use existing ComfyUI only if safe; otherwise preserve the animation/asset interfaces and proceed via Blender/Godot.
+**P2 — Production-quality, fully rigged/animated proxies:** Integrate character-specific skeletons/mechanisms and editable source, four party and 2–3 enemy meshes, runtime clips and procedural motion connected to real battle state, one arena, readable effects and coherent HUD style. Use existing ComfyUI only if safe; otherwise preserve the animation/asset interfaces and proceed via Blender/Godot.
 
 **P3 — Audio integration:** Build and mix original battle loop + entry/result stingers; cover action selection, attacks, impacts, blocks/evades, enemy feedback, victory/defeat, toy-material ambience; install per-bus controls, cue events and audio QC. No reliance on pending external paid generators.
 
@@ -43,10 +43,12 @@
 - The whole encounter, HUD, command selections, pause/settings, victory/defeat and restart are navigable **without a mouse or keyboard** on the currently available Xbox/XInput-compatible controller.
 - Keyboard/mouse can perform all essential tasks; both work through Godot InputMap actions, not divergent gameplay logic.
 - Every visible button prompt matches the current input profile; UI focus cannot silently disappear; no mouse-only tooltips or buttons.
-- All four party models and 2–3 enemies are coherent, mechanically readable proxies with usable animation/feedback.
+- All four party models and 2–3 enemies are coherent **rigged and animated** proxies, with validated Blender/GLB source, joints/weights/sockets, playable Godot transitions, synchronized telegraphs/impact/VFX/SFX and no T-pose/rest-pose glitches.
 - Sound exists **in-engine**: original battle loop/music transitions, combat impact/ability effects, navigational confirmation/cancel cues, result cues, reasonable ambience, pause behavior and adjustable bus mix. Silent audio must be a deliberate user setting, not missing implementation.
 - Visual and audio assets have source/provenance, editable/reimportable formats, appropriate commercial-license tracking and `proxy` status.
 - Repeated encounter play (without GPU model generation) exhibits no broken state/focus, major runtime errors or resource creep in the game itself.
 - A handoff report distinguishes **verified** gameplay tests from **unverified** ComfyUI or controller-specific compatibility. No final art/canon decision is implied.
 
 See [controller, HUD, UI and audio specification](04_CONTROLLER_HUD_UI_AUDIO.md).
+
+Rigging and animation acceptance is mandatory: [detailed specification](05_RIGGING_AND_ANIMATION.md).

@@ -38,3 +38,10 @@
 **Downstream:** Goose should inspect and reuse OMP's local prototype, build a controller-only playable battle early, then deliver coherent playable proxies, responsive menus/HUD, SFX, original battle music, audio buses and input parity with documented validation. Use resource-safe/rights-checked pipelines and don't block on unproven ComfyUI runs.
 
 **Intentionally unchanged:** Existing runtime code, ComfyUI, ROCm, drivers, model caches and safety scripts; no actual generation, controller playtest or audio listening test was conducted by this GitHub documentation update.
+
+## PP-CHG-0004 — 2026-11-04
+**Confidence:** VERIFIED owner request and documentation change; in-engine implementation NOT YET VERIFIED.
+
+**Trigger:** Owner explicitly required rigging and animation to be included in the production-quality non-final combat test.
+
+**Changes:** Added docs/design/05_RIGGING_AND_ANIMATION.md and strengthened combat test, asset factory and Goose hints to require proper character-specific rigs, editable sources, real Godot animations/state transitions, attack/hit/audio/visual synchronization and validation. No final artistic canon or campaign-wide contributor/pacing rules established; no runtime, driver or safety changes made.
