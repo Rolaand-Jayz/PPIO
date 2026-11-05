@@ -316,23 +316,23 @@ def build_kip():
     r.bone("Body", (0, 0, 0.22), (0, 0, 0.4), "Root")          # chassis bone
     r.bone("Turret", (0, -0.05, 0.42), (0, -0.05, 0.58), "Body")
     r.bone("Socket_Muzzle", (0, -0.42, 0.55), (0, -0.42, 0.65), "Turret")
-    r.bone("SteerFL", (-0.3, 0.28, 0.17), (-0.3, 0.28, 0.27), "Body")
-    r.bone("SteerFR", (0.3, 0.28, 0.17), (0.3, 0.28, 0.27), "Body")
-    r.bone("WheelFL", (-0.3, 0.28, 0.17), (-0.14, 0.28, 0.17), "SteerFL")
-    r.bone("WheelFR", (0.3, 0.28, 0.17), (0.14, 0.28, 0.17), "SteerFR")
-    r.bone("WheelBL", (-0.3, -0.28, 0.17), (-0.14, -0.28, 0.17), "Body")
-    r.bone("WheelBR", (0.3, -0.28, 0.17), (0.14, -0.28, 0.17), "Body")
+    r.bone("SteerFL", (-0.3, -0.28, 0.17), (-0.3, -0.28, 0.27), "Body")
+    r.bone("SteerFR", (0.3, -0.28, 0.17), (0.3, -0.28, 0.27), "Body")
+    r.bone("WheelFL", (-0.3, -0.28, 0.17), (-0.14, -0.28, 0.17), "SteerFL")
+    r.bone("WheelFR", (0.3, -0.28, 0.17), (0.14, -0.28, 0.17), "SteerFR")
+    r.bone("WheelBL", (-0.3, 0.28, 0.17), (-0.14, 0.28, 0.17), "Body")
+    r.bone("WheelBR", (0.3, 0.28, 0.17), (0.14, 0.28, 0.17), "Body")
     r.mat("paint", T, roughness=0.35); r.mat("wheel", D, roughness=0.8)
     r.mat("chrome", G, metallic=0.7, roughness=0.3); r.mat("dark", D)
     r.box((0, 0, 0.22), (0.44, 0.95, 0.16), "paint", "Body")           # chassis
-    r.box((0, 0.18, 0.34), (0.34, 0.5, 0.14), "paint", "Body")         # hood
-    r.box((0, -0.14, 0.37), (0.3, 0.34, 0.2), "chrome", "Body")        # canopy
-    r.box((0, -0.48, 0.3), (0.4, 0.08, 0.1), "paint", "Body")          # spoiler
-    r.box((0, 0.5, 0.2), (0.5, 0.1, 0.14), "chrome", "Body")           # ram bumper
+    r.box((0, -0.18, 0.34), (0.34, 0.5, 0.14), "paint", "Body")         # hood (-Y front)
+    r.box((0, 0.14, 0.37), (0.3, 0.34, 0.2), "chrome", "Body")        # canopy (rear deck)
+    r.box((0, 0.48, 0.3), (0.4, 0.08, 0.1), "paint", "Body")          # spoiler (rear +Y)
+    r.box((0, -0.5, 0.2), (0.5, 0.1, 0.14), "chrome", "Body")           # ram bumper (front -Y)
     r.cyl((0, -0.28, 0.34), 0.05, 0.26, "dark", "Turret")              # barrel (-Y fwd)
     r.sphere((0, -0.05, 0.42), 0.09, "paint", "Turret")                # turret base
-    for pos, bone in [((-0.3, 0.28), "WheelFL"), ((0.3, 0.28), "WheelFR"),
-                      ((-0.3, -0.28), "WheelBL"), ((0.3, -0.28), "WheelBR")]:
+    for pos, bone in [((-0.3, -0.28), "WheelFL"), ((0.3, -0.28), "WheelFR"),
+                      ((-0.3, 0.28), "WheelBL"), ((0.3, 0.28), "WheelBR")]:
         r.cyl((pos[0], pos[1], 0.17), 0.17, 0.12, "wheel", bone, axis='x')
         r.cyl((pos[0], pos[1], 0.17), 0.09, 0.14, "chrome", bone, axis='x')
     D = lambda d: d * FPS
@@ -353,7 +353,7 @@ def build_kip():
     }, 1.2)
     r.animation("ram", {      # charge lunge
         "Body": {'rot': [(0, (0, 0, 0)), (D(0.3), (0.18, 0, 0)), (D(0.55), (-0.22, 0, 0)), (D(0.8), (0.1, 0, 0)), (D(1.4), (0, 0, 0))],
-                 'loc': [(0, (0, 0, 0)), (D(0.55), (0, 0.16, 0)), (D(0.8), (0, 0, 0)), (D(1.4), (0, 0, 0))]},
+                 'loc': [(0, (0, 0, 0)), (D(0.55), (0, -0.16, 0)), (D(0.8), (0, 0, 0)), (D(1.4), (0, 0, 0))]},
         "SteerFL": {'rot': [(0, (0, 0, 0)), (D(0.3), (0, 0, 0.3)), (D(0.6), (0, 0, -0.35)), (D(1.4), (0, 0, 0))]},
         "SteerFR": {'rot': [(0, (0, 0, 0)), (D(0.3), (0, 0, 0.3)), (D(0.6), (0, 0, -0.35)), (D(1.4), (0, 0, 0))]},
         "WheelFL": {'rot': [(0, (0, 0, 0)), (D(0.55), (0, -math.pi * 3, 0)), (D(1.4), (0, -math.pi * 3.4, 0))]},

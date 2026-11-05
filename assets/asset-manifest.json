@@ -88,7 +88,7 @@
       "approval": "provisional",
       "version": "1.0.0",
       "checksums": {
-        "jayze.glb": "03a9bda633026cef84a9534a3ee7fc4b95428cd8b08547373e1847352bd683a4"
+        "jayze.glb": "7c94ed58f1fa2375addba902b3049c6ef672a064b4dd7addb6f35ab8e1a5106f"
       }
     },
     {
@@ -174,7 +174,7 @@
       "approval": "provisional",
       "version": "1.0.0",
       "checksums": {
-        "kip.glb": "15927a72e9257298e283822a7c1e852e28b307040716337c3d3634113d50f8d5"
+        "kip.glb": "9377f2d4ac88119cfffcbe516fa2edde47655cb4e12a0a2d4e8528f9f76ddb9c"
       }
     },
     {
@@ -263,7 +263,7 @@
       }
     },
     {
-      "asset_id": "char_jonnie",
+      "asset_id": "char_crusher",
       "category": "character",
       "association": "party \u2014 heavy exoskeleton soldier (Captain Crusher)",
       "reference": null,
@@ -288,8 +288,8 @@
       },
       "files": {
         "source": null,
-        "editable": "tools/build_combat_assets.py:build_jonnie",
-        "export": "assets/characters/jonnie.glb"
+        "editable": "tools/build_combat_assets.py:build_crusher",
+        "export": "assets/characters/crusher.glb"
       },
       "transform": {
         "units": "meters",
@@ -345,7 +345,7 @@
       "approval": "provisional",
       "version": "1.0.0",
       "checksums": {
-        "jonnie.glb": "dc6c525ae19608aab8641b50ec3b037c8c05cb1d7bce1aea01fcb91f7cafbbb7"
+        "crusher.glb": "0d2873938663c0ed750fd900ca9f0ffc020724d6589d8f797940d3e6fd63b091"
       }
     },
     {
@@ -2132,7 +2132,7 @@
       }
     },
     {
-      "asset_id": "sfx_jonnie_attack",
+      "asset_id": "sfx_crusher_attack",
       "category": "audio",
       "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
       "reference": null,
@@ -2158,7 +2158,7 @@
       "files": {
         "source": null,
         "editable": "tools/build_audio.py",
-        "export": "assets/audio/sfx/jonnie_attack.wav"
+        "export": "assets/audio/sfx/crusher_attack.wav"
       },
       "transform": {
         "units": "seconds",
@@ -2201,11 +2201,11 @@
       "approval": "provisional",
       "version": "1.0.0",
       "checksums": {
-        "jonnie_attack.wav": "3af9835d85ca2ecbbdcc6c8a39dabbe0b5da5893f80ca91322f2f3db5e5e08b5"
+        "crusher_attack.wav": "3af9835d85ca2ecbbdcc6c8a39dabbe0b5da5893f80ca91322f2f3db5e5e08b5"
       }
     },
     {
-      "asset_id": "sfx_jonnie_ability",
+      "asset_id": "sfx_crusher_ability",
       "category": "audio",
       "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
       "reference": null,
@@ -2231,7 +2231,7 @@
       "files": {
         "source": null,
         "editable": "tools/build_audio.py",
-        "export": "assets/audio/sfx/jonnie_ability.wav"
+        "export": "assets/audio/sfx/crusher_ability.wav"
       },
       "transform": {
         "units": "seconds",
@@ -2274,11 +2274,11 @@
       "approval": "provisional",
       "version": "1.0.0",
       "checksums": {
-        "jonnie_ability.wav": "ecb5704746fd9c7d35e5ea2be3d6e6662148d9623afddd84387c39be4ebdf1f3"
+        "crusher_ability.wav": "ecb5704746fd9c7d35e5ea2be3d6e6662148d9623afddd84387c39be4ebdf1f3"
       }
     },
     {
-      "asset_id": "sfx_jonnie_brace",
+      "asset_id": "sfx_crusher_brace",
       "category": "audio",
       "association": "original procedural cue, event-bound in scripts/audio_manager.gd",
       "reference": null,
@@ -2304,7 +2304,7 @@
       "files": {
         "source": null,
         "editable": "tools/build_audio.py",
-        "export": "assets/audio/sfx/jonnie_brace.wav"
+        "export": "assets/audio/sfx/crusher_brace.wav"
       },
       "transform": {
         "units": "seconds",
@@ -2347,7 +2347,7 @@
       "approval": "provisional",
       "version": "1.0.0",
       "checksums": {
-        "jonnie_brace.wav": "e2a3592fe8d8a4a764088d3db8748f11ec3d0737b872bfeee0507c0d9193e93a"
+        "crusher_brace.wav": "e2a3592fe8d8a4a764088d3db8748f11ec3d0737b872bfeee0507c0d9193e93a"
       }
     },
     {
