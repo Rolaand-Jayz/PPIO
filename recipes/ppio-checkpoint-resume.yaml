@@ -1,0 +1,29 @@
+version: "1.0.0"
+title: "PPIO — Checkpoint & Resume"
+description: "Capture the exact working state (git, tests, outstanding work, next operation) into ops/checkpoints/, or resume from the latest checkpoint without repeating completed work."
+parameters:
+  - key: mode
+    input_type: select
+    requirement: optional
+    default: "checkpoint"
+    description: "checkpoint = capture state; resume = continue from latest checkpoint"
+    options:
+      - checkpoint
+      - resume
+settings:
+  goose_provider: "zai"
+  goose_model: "glm-5.3-flash"
+  max_turns: 60
+instructions: |
+  PPIO checkpoint/resume discipline. Load ppio-godot-development. MODE: {{mode}}
+
+  CHECKPOINT MODE:
+  1. Capture: git status + current branch + last 5 commits (git log --oneline -5); test status — run battle_smoke.gd and slice_integration.gd and record pass/fail verbatim summary; list uncommitted files (git status --short) and what each contains.
+  2. Write ops/checkpoints/CHECKPOINT-<YYYY-MM-DD-HHMM>.md with: working state, verified vs reported-only facts, outstanding work with dependencies, failures and their evidence, EXACT next useful operation (file + action + test to run). Include rollback notes (branch/commit to return to).
+  3. If the tree is in a good state, commit (goose-desktop identity) so the checkpoint points at a real revision.
+
+  RESUME MODE:
+  1. Read the newest ops/checkpoints/CHECKPOINT-*.md. Verify its claims against reality NOW: re-run both test scripts, re-check git state. Note any drift (someone/something changed the tree since).
+  2. Continue from the recorded next operation. Do NOT redo completed, verified work; do NOT trust stale 'next steps' if tests say otherwise.
+  3. Report: resumed-from checkpoint, drift found (if any), work done, new test evidence, updated checkpoint written.
+prompt: "{{mode}} the PPIO work session: {{mode == 'resume' ? 'resume from the latest ops/checkpoints file, verify state, continue' : 'capture exact working state and next operation into ops/checkpoints'}}"

@@ -1,0 +1,26 @@
+version: "1.0.0"
+title: "PPIO — Combat & Gameplay Work"
+description: "Work on the deterministic battle rules, controller input, animation/HUD/VFX/audio sync, and verify through real encounters. Keeps rules authoritative and the full battle loop green."
+parameters:
+  - key: focus
+    input_type: string
+    requirement: optional
+    default: "full battle loop"
+    description: "What to work on (e.g. new ability, telegraph timing, camera, HUD flow)"
+settings:
+  goose_provider: "zai"
+  goose_model: "glm-5.3-flash"
+  max_turns: 150
+instructions: |
+  PPIO combat slice maintenance/extension. Load skills ppio-godot-development and ppio-quality-and-originality first. Ordered rules: (1) never break the deterministic engine or git history, (2) protect the user's machine, (3) get it done.
+
+  FOCUS: {{focus}}
+
+  Non-negotiables:
+  - scripts/battle_rules.gd is the ONLY combat authority (RefCounted, deterministic). plan_enemy_phase → telegraphed presentation → apply_enemy_step at visual impact. Presentation never decides damage.
+  - Controller-first: project.godot InputMap actions (battle_confirm/cancel/menu/ability, party_next/prev, pause, move_*, cam_*) must stay intact; keyboard fully supported (docs/CONTROLS.md).
+  - Sync chain per attack: windup → telegraph ('!' + ring) → active window → impact (rules applied EXACTLY here; IMPACT_AT fraction + ATTACK_SFX + VFX together) → hit reaction → recovery. No double SFX, no desync.
+  - HUD: CanvasLayer has no theme; assign _theme per root Control. Result overlay uses direct member refs (_result_title/_result_subtitle/_result_prompt).
+
+  Procedure: baseline tests (battle_smoke + slice_integration) → implement → re-run both → tests/hud_capture.gd captures if visuals changed → verify headless enemy phase determinism (same plan, same HP loss) → ops/CHANGELOG.md entry with evidence → commit (goose-desktop identity, no force-push).
+prompt: "Work on {{focus}} in the PPIO combat slice, keeping battle_rules.gd authoritative and all tests green; verify through real encounter flow."

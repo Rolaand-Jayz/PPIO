@@ -1,0 +1,35 @@
+version: "1.0.0"
+title: "PPIO — Build Asset"
+description: "Read the asset brief, design an original (anti-sameness) asset, build/rig/animate it through the deterministic Blender factory, export GLB, import into Godot, validate in the real battle, and keep provenance."
+parameters:
+  - key: asset
+    input_type: string
+    requirement: required
+    description: "Asset brief: name, role, and how it should read at gameplay distance"
+  - key: kind
+    input_type: select
+    requirement: required
+    description: "Asset category"
+    options:
+      - character
+      - prop
+      - environment
+      - audio
+settings:
+  goose_provider: "zai"
+  goose_model: "glm-5.3-flash"
+  max_turns: 150
+instructions: |
+  PPIO asset pipeline. Rules first: non-destructive (never overwrite working assets — new assets are additions or clearly versioned edits), user/machine first (headless Blender only, no GPU jobs while user active), then get it done.
+
+  ASSET: {{asset}}
+  KIND: {{kind}}
+
+  Procedure:
+  1. BRIEF + REFERENCE. Load skill ppio-quality-and-originality (and ppio-blender-assets for 3D, ppio-audio-production for audio). State how this asset stays visually/mechanically DISTINCT from existing cast (silhouette, motion signature, sound signature). If it cannot be made distinct, say so and stop.
+  2. DESIGN (original only). For characters: toy-logic construction (action figure / vehicle / figurine / exoskeleton), rig = character-specific toy mechanism, sockets Socket_* for weapons/VFX, distinct telegraph clip per enemy role. No generic humanoid clones.
+  3. BUILD via the deterministic factory: extend tools/build_combat_assets.py (3D) or tools/build_audio.py (audio) following existing conventions (Rig class parts→bones, OBJECT-mode actions + NLA fake users, export_scene.gltf GLB/ACTIONS selecting armature AND mesh; numpy env() clamp + wrap_loop() for loops). Rebuild and check the export (glb should contain meshes≥1, skins, named animations).
+  4. IMPORT into Godot: extend the existing scene/unit_view wiring (loop modes, sockets, IMPACT_AT/ATTACK_SFX sync). The rules layer (battle_rules.gd) only changes if the asset has genuine new mechanics — with matching test updates in tests/battle_smoke.gd.
+  5. VALIDATE in game: battle_smoke + slice_integration green; add the asset to a live capture (tests/hud_capture.gd) and inspect readability at gameplay distance. Audio must fire on impact fractions, no double triggers.
+  6. PROVENANCE: run python3 tools/build_manifest.py so the new asset enters assets/asset-manifest.json with checksum + status provisional + original-provenance note; update ops/CHANGELOG.md and commit (goose-desktop identity). Never delete the previous working asset until the replacement is accepted.
+prompt: "Build PPIO asset '{{asset}}' ({{kind}}) end-to-end: original design, factory build, rig/animation, Godot import, in-game validation, provenance."

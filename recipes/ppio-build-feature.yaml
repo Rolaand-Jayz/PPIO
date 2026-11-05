@@ -1,0 +1,34 @@
+version: "1.0.0"
+title: "PPIO — Build Feature"
+description: "Inspect the existing implementation, make the smallest functional change, integrate it, test actual game behavior, and preserve a working checkpoint. Follows PPIO ordered rules (1 non-destructive, 2 user/machine first, 3 get it done)."
+parameters:
+  - key: feature
+    input_type: string
+    requirement: required
+    description: "The feature or change to build (short description)"
+  - key: constraints
+    input_type: string
+    requirement: optional
+    default: ""
+    description: "Extra constraints (scope limits, files to avoid, canon notes)"
+settings:
+  goose_provider: "zai"
+  goose_model: "glm-5.3-flash"
+  max_turns: 120
+instructions: |
+  PPIO repo: canonical https://github.com/Rolaand-Jayz/PPIO.git — work in the current local Godot project. Rules in priority order: (1) never be destructive, follow .goosehints/AGENTS.md/CONTRIBUTING.md; (2) never crash the machine or interfere with the user (no GPU jobs while user active); (3) get it done via safe reversible steps.
+
+  FEATURE: {{feature}}
+  {{constraints}}
+
+  Procedure:
+  1. INSPECT first. Load skill ppio-godot-development. Read the relevant scripts/scenes/tests. Establish the baseline: run
+     $GODOT --headless --path . --script tests/battle_smoke.gd
+     $GODOT --headless --path . --script tests/slice_integration.gd
+     and record pass/fail before touching anything.
+  2. SMALLEST CHANGE. Design the minimal functional change; battle_rules.gd is combat authority — if it must change, extend tests/battle_smoke.gd in the same step. Presentation (director/unit_view/hud/vfx/audio) must never alter outcomes.
+  3. INTEGRATE. Wire into the existing battle flow/scene; do not create parallel systems or a replacement project. If the Godot editor (godot-mcp) helps, start it via ops/goose/godot_mcp_server.sh and enable the godot extension only for the duration, then disable it.
+  4. TEST REAL BEHAVIOR. Re-run both test scripts (must stay green); if the change affects what is visible, also run tests/hud_capture.gd and look at the captures. Controller InputMap and keyboard support must survive unchanged.
+  5. CHECKPOINT. Update ops/CHANGELOG.md with what changed + test evidence; commit with git -c user.name="goose-desktop" -c user.email="goose-desktop@local". Never force-push; push only to the established delivery branch if one exists.
+  Report: verified facts vs reported-only, exact files changed, test results, anything blocked.
+prompt: "Build {{feature}} in the PPIO Godot project following the recipe instructions: inspect, smallest change, integrate, test actual behavior, checkpoint."

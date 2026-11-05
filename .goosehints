@@ -1,0 +1,31 @@
+# Playtime Protocol: Innocence Lost — Goose local project hints
+CANONICAL GIT REPOSITORY: https://github.com/Rolaand-Jayz/PPIO.git
+OWNER/REPO: Rolaand-Jayz/PPIO
+CANONICAL BRANCH: main
+THIS IS THE WHOLE PROJECT MONOREPO, NOT THE ARCHIVED WEBSITE.
+
+This file applies only when Goose is working inside the checked-out PPIO repository. At session start verify git root, remote, branch, and clean/dirty status. Do not assume Goose's prior workspace already points here. If it doesn't, preserve the original local working tree and read docs/production/04_GOOSE_REPO_HANDOFF.md before touching remotes or moving files.
+
+Read AGENTS.md and docs/00_START_HERE.md. Goose Desktop is the primary implementer; preserve, inspect and import OMP's completed local Godot 4.7.2 prototype, five ComfyUI workflows, Python/Blender tools and Goose safety scripts rather than rebuilding them. Never overwrite verified local changes to make the repository look tidy. Do not force-push.
+
+DO NOT launch GPU-heavy tasks while the user is active without explicit authorization. Use resource preflight + verified in-job guard; one ComfyUI job at a time. The guard's interrupt path has not been validated under load. The known hard-freeze family occurred with --disable-dynamic-vram; keep existing approved launch configuration and do not toggle flags casually. See docs/production/02_RESOURCE_SAFETY.md.
+
+PPIO is currently PUBLIC: no private work, personal information, secrets, model weights, raw forensics, large caches or licensed assets should be pushed without an explicit privacy/rights check. The website is archived and must not be republished.
+
+At every meaningful stage: report what is verified, what remains reported-only, exact modified files and tests, blockers, and current safety status. Stop if evidence suggests impending memory pressure or an unsafe repository merge.
+
+CURRENT EXECUTION OBJECTIVE: Build the COMPLETE COMBAT TEST SLICE, not the full game. Read docs/design/03_COMBAT_TEST_SLICE.md and docs/design/04_CONTROLLER_HUD_UI_AUDIO.md. Controller-first (test Xbox-style controller), no mouse needed; keyboard/mouse fully supported; Steam Controller targeted at release. Build functional HUD/UI, music, combat SFX, UI cues, settings and whole battle loop at production-quality execution with expressly NON-FINAL proxy art/audio. Preserve existing battle engine; do not assume FF7 Rebirth mechanics are approved. No unsafe GPU jobs while user active.
+
+Rigging and animation ARE blocking combat-slice deliverables. Follow docs/design/05_RIGGING_AND_ANIMATION.md: character-specific toy mechanisms/rigs for four heroes and all enemy proxies, editable sources, animation clips/procedural motion, Godot AnimationTree/AnimationPlayer or existing equivalents, blending/interruption, sockets and impact/telegraph/VFX/SFX synchronization. Static meshes and disconnected animation demos do not pass.
+
+LOCAL PROJECT WORKSPACE IDENTIFIED BY OWNER: /mnt/workdrive/playtime-protocol-godot-comfy-blender . This is the local source location, NOT a verified PPIO Git checkout. Inspect working tree/remote and preserve it while reconciling with PPIO main. Do not blindly move files or reset history.
+
+AFTER (NOT DURING) COMPLETION OF THE COMBAT SLICE: execute the separate optimization assignment docs/production/05_POST_SLICE_GOOSE_OPTIMIZATION.md. It covers scoped Goose skills, recipes, roles, extensions, MCP Apps, hooks, context discipline, model choices and QA. Do not interrupt active combat work, silently change systemwide settings, spend money or invent owner-reserved campaign rules.
+
+CONTRIBUTOR GUARDRAILS ARE NOW ACTIVE: read CONTRIBUTING.md, docs/governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md, docs/design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md, and docs/production/06_TOOLCHAIN_INTEGRATION_CONTRACT.md. R1 preserve/obey, R2 user/machine first, R3 persistent safe delivery. Reject generic homogeneous character/encounter/UI/animation/audio designs and unvalidated low-quality outputs. Originality requires observable side-by-side comparison and owner slice approval, not prompt adjectives. Adapt current work non-destructively at next safe checkpoint per docs/governance/05_VERTICAL_SLICE_TRANSITION.md.
+
+DO NOT BEGIN post-slice Goose specialization automatically. Wait until combat slice completed AND owner explicitly supplies a separate optimization prompt. Meanwhile continue the existing combat objective under the new immediate safety and quality gates.
+
+POST-SLICE SPECIALIZATION DECISION RIGHTS: after combat slice and explicit owner prompt, follow docs/production/07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md. Owner + ChatGPT reason through major architecture and creative trade-offs; Goose can make, test, and retain small reversible project-scoped improvements without formal approvals. Share concise evidence for big decisions and final setup. GLM-5.3-Flash is the desired default; GLM-5.3 is selective escalation for reasoning/safety/complex work. GLM-5.5 is not automatic. Never assume ChatGPT has a live connection to this local Goose session; use reviewed PPIO reports via owner.
+
+SPECIALIZATION TESTING POLICY (POST-SLICE ONLY): Test improvements IN THE WORK on real Playtime Protocol features, not in a separate synthetic benchmark campaign. For small reversible adaptations, build/use/check/keep-or-revert without formal approval ceremonies. Preserve essential safety checks and actual feature quality gates. Unused capabilities remain NOT TESTED. Do not launch the specialization before the owner's separate prompt.
