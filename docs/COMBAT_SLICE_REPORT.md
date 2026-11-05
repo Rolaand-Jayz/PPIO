@@ -13,9 +13,9 @@ what is **reported-only** (requires the owner's hands, ears, or hardware).
    rendered captures `artifacts/captures/*.png`.
 2. **Four party proxies modeled, rigged, animated** — Jayze (humanoid,
    `Socket_Weapon`), Kip (vehicle: steer pivots + axle wheel chain,
-   `Socket_Muzzle`), Rallo (winged hover, `Socket_ClawR`), Jonnie (heavy
+   `Socket_Muzzle`), Rallo (winged hover, `Socket_ClawR`), Captain Crusher (heavy
    exoskeleton, `Socket_Pounder`). 8 clips each (idle/move/attack/ability/
-   guard/hit/defeat/victory; Kip +ram; Jonnie +brace).
+   guard/hit/defeat/victory; Kip +ram; Captain Crusher +brace).
 3. **Three enemy proxies modeled, rigged, animated** — Sprocket (wind-up
    chaser), Clanker (heavy slam), Gimbal (ranged disc). Each has a distinct
    telegraph clip + attack + hit + defeat.
@@ -26,7 +26,7 @@ what is **reported-only** (requires the owner's hands, ears, or hardware).
    captures 03–07 show mid-battle poses.
 5. **Deterministic rules are authoritative.** `battle_rules.gd` v2 keeps all
    v1 mechanics (guard −2, momentum, co-op, music box, sign-step advance) and
-   adds Rallo screech (daze), Jonnie pound/mend/brace, Gimbal ranged pressure.
+   adds Rallo screech (daze), Captain Crusher pound/mend/brace, Gimbal ranged pressure.
    The enemy phase is planned (`plan_enemy_phase`) then applied step-by-step
    (`apply_enemy_step`) so presentation cannot alter outcomes.
    Evidence: `tests/battle_smoke.gd` PASS (20 scenario groups, v1 intents

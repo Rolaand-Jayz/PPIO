@@ -34,11 +34,11 @@ const ATTACK_SFX := {
 	"jayze": {"attack": "jayze_attack", "ability": "jayze_ability", "melee": "jayze_attack", "technique": "jayze_ability"},
 	"kip": {"attack": "kip_shoot", "ability": "kip_ram", "shoot": "projectile", "ram": "kip_ram"},
 	"rallo": {"attack": "rallo_claw", "ability": "rallo_ability", "claw": "rallo_claw", "screech": "rallo_ability"},
-	"jonnie": {"attack": "jonnie_attack", "ability": "jonnie_ability", "pound": "jonnie_attack", "mend": "jonnie_ability"},
+	"crusher": {"attack": "crusher_attack", "ability": "crusher_ability", "pound": "crusher_attack", "mend": "crusher_ability"},
 }
 const ACCENT := {
 	"jayze": Color(0.89, 0.65, 0.23), "kip": Color(0.16, 0.73, 0.78),
-	"rallo": Color(0.86, 0.38, 0.32), "jonnie": Color(0.53, 0.41, 0.73),
+	"rallo": Color(0.86, 0.38, 0.32), "crusher": Color(0.53, 0.41, 0.73),
 	"sprocket": Color(0.95, 0.72, 0.2), "clanker": Color(0.45, 0.5, 0.42),
 	"gimbal": Color(0.95, 0.55, 0.15),
 }
@@ -443,7 +443,7 @@ func _execute_action(id: String, action: String, target: String) -> void:
 		await get_tree().create_timer(clip_len * impact_frac).timeout
 		if action == "brace":
 			BattleVfx.guard_flash(self, actor)
-			Audio.sfx("jonnie_brace")
+			Audio.sfx("crusher_brace")
 		else:
 			Audio.sfx("guard_block", 1.0, -6.0)
 		await get_tree().create_timer(maxf(0.1, clip_len * (1.0 - impact_frac))).timeout

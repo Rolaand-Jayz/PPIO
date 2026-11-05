@@ -2,7 +2,7 @@ extends SceneTree
 
 ## Deterministic combat rules tests — combat slice v2.
 ## Original v1 assertion intents preserved (adapted to the 4-party/3-foe
-## roster), plus new coverage: Rallo screech stun, Jonnie pound/mend/brace,
+## roster), plus new coverage: Rallo screech stun, Captain Crusher pound/mend/brace,
 ## Gimbal ranged pressure, staged enemy-phase plan/apply consistency,
 ## deferred enemy phase, and move cancellation.
 
@@ -42,7 +42,7 @@ func _initialize() -> void:
 	assert(combo.use_action("jayze", "melee", "clanker") == false, "activated actor cannot act again")
 	assert(combo.use_action("rallo", "claw", "clanker"), "Rallo claw resolves")
 	assert(combo.units.clanker.hp == 2, "claw deals deterministic 3 damage")
-	assert(combo.use_action("jonnie", "pound", "gimbal"), "Jonnie pound resolves at reach 1")
+	assert(combo.use_action("crusher", "pound", "gimbal"), "Captain Crusher pound resolves at reach 1")
 	assert(combo.units.gimbal.hp == 1, "pound deals 4 and staggers")
 	assert(combo.round_number == 2 and combo.units.kip.hp == 6, "enemy phase ran after the fourth activation")
 	assert(combo.units.gimbal.stunned == 0, "stagger is consumed by the imminent enemy phase")
@@ -58,7 +58,7 @@ func _initialize() -> void:
 	guard.units.clanker.cell = Vector2i(3, 4)
 	guard.units.gimbal.cell = Vector2i(3, 3)
 	guard.units.rallo.hp = 0
-	guard.units.jonnie.hp = 0
+	guard.units.crusher.hp = 0
 	assert(guard.use_action("jayze", "guard"), "Jayze can guard")
 	assert(guard.use_action("kip", "guard"), "Kip can guard")
 	guard.enemy_phase()
@@ -68,7 +68,7 @@ func _initialize() -> void:
 	# ---- party wipe is defeat ----
 	var defeat = Rules.new()
 	defeat.units.rallo.hp = 0
-	defeat.units.jonnie.hp = 0
+	defeat.units.crusher.hp = 0
 	defeat.begin_combat()
 	defeat.units.sprocket.cell = Vector2i(3, 2)
 	defeat.units.clanker.cell = Vector2i(3, 4)
@@ -79,22 +79,22 @@ func _initialize() -> void:
 	assert(defeat.use_action("kip", "shoot", "clanker"), "ranged shot resolves")
 	assert(defeat.result == "defeat", "all party members reaching zero ends combat")
 
-	# ---- Jonnie mend + cooldown; brace pair guard ----
+	# ---- Captain Crusher mend + cooldown; brace pair guard ----
 	var support = Rules.new()
 	support.begin_combat()
 	support.units.jayze.hp = 6
-	assert(support.use_action("jonnie", "mend", "jayze"), "Jonnie mends Jayze")
-	assert(support.units.jayze.hp == 9 and support.units.jonnie.mend_cd == 3, "mend heals 3 and starts cooldown")
+	assert(support.use_action("crusher", "mend", "jayze"), "Captain Crusher mends Jayze")
+	assert(support.units.jayze.hp == 9 and support.units.crusher.mend_cd == 3, "mend heals 3 and starts cooldown")
 	support.units.rallo.cell = Vector2i(6, 3)
 	assert(support.use_action("rallo", "claw", "sprocket"), "Rallo acts while mend cooldown ticks")
-	assert(support.use_action("kip", "mend", "kip") == false, "only Jonnie can mend")
+	assert(support.use_action("kip", "mend", "kip") == false, "only Captain Crusher can mend")
 	var brace = Rules.new()
 	brace.begin_combat()
 	brace.units.jayze.hp = 0
 	brace.units.kip.hp = 0
 	brace.units.rallo.cell = Vector2i(2, 4)
-	assert(brace.use_action("jonnie", "brace"), "Jonnie braces")
-	assert(brace.units.jonnie.guard and brace.units.rallo.guard, "brace grants guard to Jonnie and nearest living ally")
+	assert(brace.use_action("crusher", "brace"), "Captain Crusher braces")
+	assert(brace.units.crusher.guard and brace.units.rallo.guard, "brace grants guard to Captain Crusher and nearest living ally")
 
 	# ---- Rallo screech: stun skips exactly one enemy attack ----
 	var screech = Rules.new()
@@ -113,7 +113,7 @@ func _initialize() -> void:
 	gimbal.units.gimbal.cell = Vector2i(5, 2)
 	gimbal.units.rallo.hp = 0
 	gimbal.units.kip.hp = 0
-	gimbal.units.jonnie.hp = 0
+	gimbal.units.crusher.hp = 0
 	gimbal.enemy_phase()
 	assert(gimbal.units.jayze.hp == 10, "Gimbal deals deterministic 2 damage at range 3")
 

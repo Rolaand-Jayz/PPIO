@@ -77,8 +77,8 @@ entries.append(entry("char_kip", "character", "party — weaponized die-cast rac
 entries.append(entry("char_rallo", "character", "party — gargoyle low-hover brawler",
     {"source": None, "editable": "tools/build_combat_assets.py:build_rallo", "export": "assets/characters/rallo.glb"},
     PARTY_CLIPS, ["Socket_ClawR"], "winged compact rig with hover root animation, 14 bones"))
-entries.append(entry("char_jonnie", "character", "party — heavy exoskeleton soldier (Captain Crusher)",
-    {"source": None, "editable": "tools/build_combat_assets.py:build_jonnie", "export": "assets/characters/jonnie.glb"},
+entries.append(entry("char_crusher", "character", "party — heavy exoskeleton soldier (Captain Crusher)",
+    {"source": None, "editable": "tools/build_combat_assets.py:build_crusher", "export": "assets/characters/crusher.glb"},
     PARTY_CLIPS + ["brace"], ["Socket_Pounder"], "armored heavy rig: pauldrons/pack ride arm/torso bones, 12 bones"))
 entries.append(entry("char_sprocket", "character", "enemy — wind-up chaser (close pressure)",
     {"source": None, "editable": "tools/build_combat_assets.py:build_sprocket", "export": "assets/characters/sprocket.glb"},
@@ -102,7 +102,7 @@ AUDIO = [
 ]
 for name in ["ui_move", "ui_confirm", "ui_cancel", "ui_deny", "ui_open", "ui_close", "ui_target", "ui_party", "ui_pause",
              "jayze_attack", "jayze_ability", "kip_shoot", "kip_ram", "rallo_claw", "rallo_ability",
-             "jonnie_attack", "jonnie_ability", "jonnie_brace", "impact_light", "impact_heavy", "guard_block",
+             "crusher_attack", "crusher_ability", "crusher_brace", "impact_light", "impact_heavy", "guard_block",
              "hit_react", "evade", "ko_down", "telegraph_warn", "enemy_attack", "projectile", "heal", "stagger"]:
     sub = "ui" if name.startswith("ui_") else "sfx"
     AUDIO.append(("sfx_" + name, "audio", "assets/audio/%s/%s.wav" % (sub, name), "original procedural cue, event-bound in scripts/audio_manager.gd"))

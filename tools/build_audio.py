@@ -269,15 +269,15 @@ def sfx_library():
     out["rallo_ability"] = normalize(mix(sweep(920, 380, 0.55, 0.45, kind="tri", attack=0.05, release=0.2)
                                          + 0.25 * sweep(1390, 570, 0.55, 0.2, kind="sine", release=0.2),
                                          noise(0.5, 0.2, hp=2500, attack=0.1, release=0.3)), 0.7)
-    # Jonnie — heavy machinery
-    out["jonnie_attack"] = normalize(cat(sweep(55, 130, 0.32, 0.5, kind="square", attack=0.04, release=0.08),
+    # Captain Crusher — heavy machinery
+    out["crusher_attack"] = normalize(cat(sweep(55, 130, 0.32, 0.5, kind="square", attack=0.04, release=0.08),
                                          kick(0.3, 1.0),
                                          mix(sine(420, 0.3, 0.3, release=0.25), noise(0.22, 0.4, lp=1200, release=0.15))), 0.8)
-    out["jonnie_ability"] = normalize(mix(sine(523, 0.5, 0.28, release=0.42),
+    out["crusher_ability"] = normalize(mix(sine(523, 0.5, 0.28, release=0.42),
                                           sine(659, 0.45, 0.22, release=0.38),
                                           sine(784, 0.4, 0.18, release=0.34),
                                           sine(1046, 0.35, 0.12, release=0.3)), 0.7)
-    out["jonnie_brace"] = normalize(mix(sine(1150, 0.18, 0.4, release=0.14),
+    out["crusher_brace"] = normalize(mix(sine(1150, 0.18, 0.4, release=0.14),
                                         sine(1720, 0.14, 0.2, release=0.12),
                                         noise(0.16, 0.3, lp=1600, release=0.1),
                                         kick(0.16, 0.5)), 0.7)

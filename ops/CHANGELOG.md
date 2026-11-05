@@ -41,3 +41,5 @@ where copied into `ops/sources/`.
 - VERIFIED: battle_smoke PASS, slice_integration PASS (AnimationPlayer + idle animating on new rig), hud_capture 7 frames — new Jayze readable at gameplay distance.
 - REJECTED per gates: v001 concept (glowing-armor mecha = hard reject), v002 (faceless mannequin), v003 (elderly cloth coat), v004 (child proportions), v005 (two-figure sheet).
 - KNOWN LIMITS: 126 sub-mm crack-seam edges (Hunyuan multi-shell, invisible in engine); back/side colors stretched (front projection); remaining cast still graybox (loop continues: Kip, Rallo, Jonnie, Sprocket, Clanker, Gimbal).
+- CANON (D-023): combat slot 4 is Captain Crusher (Jonnie story-only, never combat). Renamed id/display/audio/asset/test references; battle_smoke + slice_integration PASS; hud_capture verified party panel shows Crusher.
+- Asset-loop refs: owner will supply starting images in assets/source/playtime/_owner-provided/; generated refs (SDXL v001-v006, pollinations flux) demoted to placeholders/provenance.

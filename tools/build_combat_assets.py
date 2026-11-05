@@ -6,7 +6,7 @@
 # - Toy-segment skinning: each mesh part is weighted 1.0 to the bone that
 #   articulates it (correct for manufactured toys; stable at extreme poses).
 # - Every playable character gets an appropriate rig (Jayze humanoid, Kip
-#   vehicle with steer+axle wheel chain, Rallo winged hover, Jonnie armored
+#   vehicle with steer+axle wheel chain, Rallo winged hover, Captain Crusher armored
 #   heavy), enemies rigged for their role (no uniform skeletons).
 # - Named clips per character, exported as separate glTF animations.
 # - Deterministic: no random values; rebuild from scratch every run.
@@ -478,8 +478,8 @@ def build_rallo():
     }, 2.4)
     return r
 
-def build_jonnie():
-    r = Rig("Jonnie")
+def build_crusher():
+    r = Rig("Captain Crusher")
     A, P, D, V = (0.53, 0.41, 0.73), (0.3, 0.32, 0.4), (0.16, 0.17, 0.2), (0.4, 0.9, 0.85)
     r.bone("Root", (0, 0, 0), (0, 0, 0.1))
     r.bone("Hips", (0, 0, 0.46), (0, 0, 0.58), "Root")
@@ -848,7 +848,7 @@ def main():
 
     builders = [
         ("jayze", build_jayze), ("kip", build_kip), ("rallo", build_rallo),
-        ("jonnie", build_jonnie), ("sprocket", build_sprocket),
+        ("crusher", build_crusher), ("sprocket", build_sprocket),
         ("clanker", build_clanker), ("gimbal", build_gimbal),
     ]
     for name, fn in builders:

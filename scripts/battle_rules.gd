@@ -2,15 +2,15 @@ class_name BattleRules
 extends RefCounted
 
 ## Deterministic combat rules — Playtime Protocol combat test slice.
-## v2: full slice roster (Jayze, Kip, Rallo, Jonnie vs Sprocket, Clanker, Gimbal).
+## v2: full slice roster (Jayze, Kip, Rallo, Captain Crusher vs Sprocket, Clanker, Gimbal).
 ## All original v1 mechanics preserved: guard -2, Kip momentum, co-op strike,
 ## music box interact, sign-step enemy advance, round telegraphs.
-## New: Rallo screech (stun), Jonnie pound (stagger) / mend (heal, cooldown) /
+## New: Rallo screech (stun), Captain Crusher pound (stagger) / mend (heal, cooldown) /
 ## brace (pair guard), Gimbal ranged pressure, staged enemy-phase planning so
 ## the presentation layer can animate attacks without changing outcomes.
 ## This class stays rules-only: no nodes, no randomness, no audio/visual calls.
 
-const PARTY := ["jayze", "kip", "rallo", "jonnie"]
+const PARTY := ["jayze", "kip", "rallo", "crusher"]
 const FOES := ["sprocket", "clanker", "gimbal"]
 const BLOCKED_CELLS := [Vector2i(3, 3), Vector2i(5, 1)]
 const GRID := Vector2i(10, 8)
@@ -44,7 +44,7 @@ func reset() -> void:
 		"jayze": _unit("Jayze", Vector2i(2, 2), 12, true),
 		"kip": _unit("Kip", Vector2i(2, 4), 10, true),
 		"rallo": _unit("Rallo", Vector2i(1, 3), 11, true),
-		"jonnie": _unit("Jonnie", Vector2i(2, 3), 14, true),
+		"crusher": _unit("Captain Crusher", Vector2i(2, 3), 14, true),
 		"sprocket": _unit("Sprocket", Vector2i(7, 3), 9, false),
 		"clanker": _unit("Clanker", Vector2i(7, 5), 11, false),
 		"gimbal": _unit("Gimbal", Vector2i(8, 4), 8, false),
@@ -125,7 +125,7 @@ func use_action(id: String, action: String, target: String = "") -> bool:
 			units[id].guard = true
 			event = "%s guards (next hit reduced by %d)." % [units[id].label, GUARD_REDUCTION]
 		"brace":
-			if id != "jonnie": return false
+			if id != "crusher": return false
 			units[id].guard = true
 			var buddy := _nearest_ally(id)
 			if buddy != "" and _dist(units[id].cell, units[buddy].cell) <= 1:
@@ -134,7 +134,7 @@ func use_action(id: String, action: String, target: String = "") -> bool:
 			else:
 				event = "%s braces (next hit reduced by %d)." % [units[id].label, GUARD_REDUCTION]
 		"mend":
-			if id != "jonnie" or units[id].mend_cd > 0: return false
+			if id != "crusher" or units[id].mend_cd > 0: return false
 			if not PARTY.has(target) or not _alive(target) or _dist(units[id].cell, units[target].cell) > 2: return false
 			var healed := mini(3, units[target].max_hp - units[target].hp)
 			units[target].hp += healed
@@ -184,7 +184,7 @@ func use_action(id: String, action: String, target: String = "") -> bool:
 					if id != "rallo": return false
 					damage = 3
 				"pound":
-					if id != "jonnie": return false
+					if id != "crusher": return false
 					damage = 4
 					staggered = true
 				_: return false
@@ -217,7 +217,7 @@ func actions_for(id: String) -> Array[String]:
 		"jayze": out = ["melee", "technique", "guard", "cooperate", "interact"]
 		"kip": out = ["shoot", "ram", "guard", "cooperate", "interact"]
 		"rallo": out = ["claw", "screech", "guard", "interact"]
-		"jonnie": out = ["pound", "mend", "brace", "guard", "interact"]
+		"crusher": out = ["pound", "mend", "brace", "guard", "interact"]
 	return out
 
 func action_needs_target(action: String) -> bool:

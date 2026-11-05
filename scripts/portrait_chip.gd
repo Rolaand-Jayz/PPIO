@@ -12,7 +12,7 @@ const COLORS := {
 	"jayze": Color(0.89, 0.65, 0.23),
 	"kip": Color(0.16, 0.73, 0.78),
 	"rallo": Color(0.86, 0.38, 0.32),
-	"jonnie": Color(0.53, 0.41, 0.73),
+	"crusher": Color(0.53, 0.41, 0.73),
 }
 
 func _draw() -> void:
@@ -38,7 +38,7 @@ func _draw() -> void:
 		"rallo":  # wings: two arcs
 			draw_colored_polygon(PackedVector2Array([c + Vector2(0, -8), c + Vector2(-12, 4), c + Vector2(-2, 3)]), fg)
 			draw_colored_polygon(PackedVector2Array([c + Vector2(0, -8), c + Vector2(12, 4), c + Vector2(2, 3)]), fg)
-		"jonnie":  # shield: heavy cross plate
+		"crusher":  # shield: heavy cross plate
 			draw_rect(Rect2(c + Vector2(-8, -8), Vector2(16, 16)), fg)
 			draw_rect(Rect2(c + Vector2(-2, -8), Vector2(4, 16)), fill)
 			draw_rect(Rect2(c + Vector2(-8, -2), Vector2(16, 4)), fill)

@@ -105,7 +105,7 @@ func _build_static_ui() -> void:
 	head.add_theme_font_size_override("font_size", 14)
 	head.add_theme_color_override("font_color", Color(0.75, 0.8, 0.9))
 	pv.add_child(head)
-	for id in ["jayze", "kip", "rallo", "jonnie"]:
+	for id in ["jayze", "kip", "rallo", "crusher"]:
 		var row := _party_row(id)
 		pv.add_child(row)
 
@@ -466,7 +466,7 @@ func update_state(rules, director_state: String, selected: String, target: Strin
 		if u.stunned > 0: tags.append("DAZED")
 		if rules.activated.has(id) and rules.phase == "player": tags.append("ACTED")
 		if id == "kip" and u.momentum >= 2: tags.append("RAM READY")
-		if id == "jonnie" and u.mend_cd > 0: tags.append("MEND %d" % u.mend_cd)
+		if id == "crusher" and u.mend_cd > 0: tags.append("MEND %d" % u.mend_cd)
 		row.status.text = "  ".join(tags)
 		row.status.add_theme_color_override("font_color", Color(0.55, 0.8, 1.0))
 		if u.hp <= 0:
