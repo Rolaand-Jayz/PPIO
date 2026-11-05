@@ -58,7 +58,7 @@ func reset() -> void:
 	defer_enemy_phase = false
 	awaiting_enemy = false
 	result = ""
-	event = "WASD to move; C enters combat."
+	event = "Move a toy, then open the command menu to begin combat."
 
 func _unit(label: String, cell: Vector2i, hp: int, player: bool) -> Dictionary:
 	return {"label": label, "cell": cell, "hp": hp, "max_hp": hp, "player": player,
@@ -280,20 +280,28 @@ func apply_enemy_phase(steps: Array[Dictionary]) -> void:
 	## for the current state; validation is deterministic (see smoke tests).
 	phase = "enemy"
 	for step in steps:
-		var foe: String = step.foe
-		if not _alive(foe): continue
-		match step.kind:
-			"stunned":
-				units[foe].stunned = 0
-			"attack":
-				var target: String = step.target
-				# Damage was computed by the plan against this same state
-				# (guard reduction included); apply it verbatim.
-				var damage: int = step.damage
-				if units[target].guard: units[target].guard = false
-				units[target].hp = maxi(0, units[target].hp - damage)
-			"advance":
-				units[foe].cell = step.dest
+		apply_enemy_step(step)
+	_unpost_round()
+
+func apply_enemy_step(step: Dictionary) -> void:
+	## Mutates state for ONE planned step (used by the staged presentation).
+	var foe: String = step.foe
+	if not _alive(foe): return
+	match step.kind:
+		"stunned":
+			units[foe].stunned = 0
+		"attack":
+			var target: String = step.target
+			# Damage was computed by the plan against this same state
+			# (guard reduction included); apply it verbatim.
+			var damage: int = step.damage
+			if units[target].guard: units[target].guard = false
+			units[target].hp = maxi(0, units[target].hp - damage)
+		"advance":
+			units[foe].cell = step.dest
+
+func finish_enemy_phase() -> void:
+	## Round bookkeeping after every planned step has been applied.
 	_unpost_round()
 
 func enemy_phase() -> void:
@@ -324,6 +332,22 @@ func _unpost_round() -> void:
 
 func telegraphs() -> Array[String]:
 	return _telegraphs()
+
+func foe_intents() -> Dictionary:
+	## Read-only per-foe intent for HUD markers ("attack"/"advance"/"dazed").
+	var out := {}
+	for foe in FOES:
+		if not _alive(foe):
+			continue
+		if units[foe].stunned > 0:
+			out[foe] = "dazed"
+			continue
+		var target := _nearest_party(foe)
+		if target == "":
+			continue
+		var stat: Dictionary = FOE_STATS[foe]
+		out[foe] = "attack" if _dist(units[foe].cell, units[target].cell) <= stat.reach else "advance"
+	return out
 
 func living_party_ids() -> Array[String]:
 	var out: Array[String] = []

@@ -163,6 +163,7 @@ class Rig:
             for k in range(len(pf)):
                 mesh.polygons[fi].material_index = idx_by_short[mat]
                 fi += 1
+        self.mesh_obj = obj
         return obj
 
     # ---- animation ----
@@ -198,6 +199,8 @@ class Rig:
 def export_glb(rig, path, extras=()):
     bpy.ops.object.select_all(action='DESELECT')
     rig.obj.select_set(True)
+    if getattr(rig, "mesh_obj", None):
+        rig.mesh_obj.select_set(True)
     for e in extras:
         e.select_set(True)
     bpy.context.view_layer.objects.active = rig.obj
@@ -777,7 +780,7 @@ def build_arena(out_dir):
 
     mat_floor = material("arena_floor", (1, 1, 1), roughness=0.8)
     mat_plank = material("arena_wood", (0.76, 0.63, 0.45), roughness=0.75)
-    mat_rug = material("arena_rug", (0.72, 0.3, 0.28), roughness=0.85)
+    mat_rug = material("arena_rug", (0.6, 0.2, 0.18), roughness=0.85)
     mat_block1 = material("arena_block_teal", (0.25, 0.5, 0.55), roughness=0.5)
     mat_block2 = material("arena_block_wood", (0.62, 0.45, 0.3), roughness=0.6)
     mat_box = material("arena_musicbox", (0.75, 0.6, 0.3), metallic=0.2, roughness=0.4)
@@ -798,8 +801,8 @@ def build_arena(out_dir):
             verts += [(x0 - 0.5, y0 - 0.5, 0), (x0 + 0.5, y0 - 0.5, 0),
                       (x0 + 0.5, y0 + 0.5, 0), (x0 - 0.5, y0 + 0.5, 0)]
             faces.append((base, base + 1, base + 2, base + 3))
-            tone = 0.86 if (gx + gy) % 2 == 0 else 0.78
-            warm = (0.93, 0.87, 0.72)
+            tone = 0.8 if (gx + gy) % 2 == 0 else 0.7
+            warm = (0.82, 0.74, 0.58)
             for _ in range(4):
                 colors.append((warm[0] * tone, warm[1] * tone, warm[2] * tone))
     add("Floor", verts, faces, mat_floor, colors)
@@ -817,7 +820,7 @@ def build_arena(out_dir):
     slab("Rug", (0, 0, 0.008), (5.0, 4.2, 0.016), mat_rug)
     slab("BedBase", (-5.6, -3.6, 0.35), (2.2, 3.4, 0.7), mat_bed)
     slab("BedBlanket", (-5.6, -2.9, 0.72), (2.2, 2.0, 0.08), mat_blanket)
-    slab("DeskLeg", (-4.2, 3.4, 0.6), (0.5, 0.5, 1.2), mat_leg)
+    slab("DeskLeg", (-5.4, 2.6, 0.6), (0.5, 0.5, 1.2), mat_leg)
     slab("WallBack", (0, -5.3, 1.2), (12, 0.4, 2.4), mat_wall)
     slab("WallLeft", (-6.3, 0, 1.2), (0.4, 10, 2.4), mat_wall)
     slab("SkirtingBack", (0, -5.05, 0.18), (12, 0.12, 0.36), mat_skirt)
