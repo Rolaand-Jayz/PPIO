@@ -32,3 +32,4 @@ where copied into `ops/sources/`.
 - IMPORTED: canonical .goosehints/AGENTS.md/CONTRIBUTING.md + governing docs from origin/main ad430fdf (additive; local tree previously lacked them).
 - REJECTED: GitHub MCP (gh sufficient), Beads (ledger duplication), comfy-mcp (lifecycle conflict, D-018); Blender MCP left disabled (D-019).
 - TESTS: battle_smoke.gd PASS (rules v2) and slice_integration.gd PASS (3.1s) after project.godot plugin addition — combat slice unaffected.
+- CORRECTION (same day): the checkpoint-resume recipe live exercise occurred AFTER the entry above was drafted; that line described intent and is now factual — see ops/checkpoints/CHECKPOINT-2026-11-05-1050.md. Drift it caught (missing docs/design 01-06 + templates) fixed by importing them additively from origin/main; battle_smoke + slice_integration re-run PASS before this entry.
