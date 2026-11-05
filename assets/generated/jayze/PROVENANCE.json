@@ -1,0 +1,27 @@
+{
+  "asset": "jayze",
+  "status": "provisional (proxy v2, non-canon)",
+  "pipeline": "ComfyUI SDXL concept -> Hunyuan3D v2.1 mesh -> Blender refine/rig -> GLB -> Godot",
+  "provenance": {
+    "concept": {
+      "workflow": "workflows/jayze_concept_sdxl_api.json (overridden)",
+      "model": "sd_xl_base_1.0.safetensors",
+      "image": "assets/source/playtime/jayze/jayze_concept_provisional_sdxl_v006_00001_.png",
+      "seed": 20261109, "steps": 28, "cfg": 7.0,
+      "accepted_after": "v001 mecha-leak REJECT; v002 mannequin REJECT; v003 elderly-coat REJECT; v005 two-figure-sheet REJECT; v004 identity-OK-but-child REJECT (proportions)",
+      "gates": ["single figure", "young-teen age read", "2 arms / 2 legs verified", "closed silhouette", "toy joint language", "teal/gold color study"]
+    },
+    "mesh": {
+      "workflow": "workflows/kip_mesh_api.json (overridden: ref image, seed 20261109)",
+      "model": "hunyuan_3d_v2.1.safetensors",
+      "output": "assets/source/playtime/jayze/jayze_hunyuan_provisional_v001_00001_.glb"
+    },
+    "refine": {
+      "tool": "tools/refine_generated_character.py",
+      "ops": "hole audit+fill (125 boundary edges imported; ~126 open crack-seam edges remain in multi-shell topology, sub-mm, invisible at game distance), remove_doubles, decimate 208k->52k tris, normalize height 1.1 feet z0, leg-cluster detection, heat auto-weights, factory bone set (12+Socket_Weapon), 8 factory clips ported verbatim, palette projection from accepted reference into 10 flat toy-panel materials",
+      "known_limits": ["back/side colors stretched from front projection", "14961 multi-face interior edges (Hunyuan shell structure), harmless to render/weights"]
+    }
+  },
+  "runtime_validation": ["battle_smoke PASS", "slice_integration PASS (AnimationPlayer + idle animating)", "hud_capture 7 frames"],
+  "rollback": "assets/legacy-graybox/jayze.glb (factory graybox v1)"
+}

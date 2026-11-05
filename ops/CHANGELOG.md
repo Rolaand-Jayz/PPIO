@@ -33,3 +33,11 @@ where copied into `ops/sources/`.
 - REJECTED: GitHub MCP (gh sufficient), Beads (ledger duplication), comfy-mcp (lifecycle conflict, D-018); Blender MCP left disabled (D-019).
 - TESTS: battle_smoke.gd PASS (rules v2) and slice_integration.gd PASS (3.1s) after project.godot plugin addition — combat slice unaffected.
 - CORRECTION (same day): the checkpoint-resume recipe live exercise occurred AFTER the entry above was drafted; that line described intent and is now factual — see ops/checkpoints/CHECKPOINT-2026-11-05-1050.md. Drift it caught (missing docs/design 01-06 + templates) fixed by importing them additively from origin/main; battle_smoke + slice_integration re-run PASS before this entry.
+
+## 2026-11-05 — Asset quality loop, iteration 1: generation pipeline live (goose-desktop)
+- OWNER AUTHORIZED local GPU generation for combat-slice assets; safety rails held: resmon preflight, comfy_start.sh (GOOSE_FORCE_COMFY_START=1 per documented override), guard on every job, one job at a time, peak VRAM 9.2/16.3GB, zero pressure breaches, 6 successful jobs (5 concepts + 1 mesh).
+- PIPELINE ESTABLISHED: SDXL concept (identity-gated, bounded iteration — 5 rejected candidates with recorded causes) -> Hunyuan3D v2.1 image-to-mesh -> tools/refine_generated_character.py (hole audit/fill, decimate 208k->52k tris, normalize to 1.1u, leg-cluster detection, heat weights, factory bone names + 8 clips verbatim, palette projection to 10 toy-panel materials) -> GLB -> Godot.
+- DELIVERED: assets/characters/jayze.glb v2 (rigged Hunyuan mesh) replacing graybox; last-known-good preserved at assets/legacy-graybox/jayze.glb; provenance in assets/generated/jayze/PROVENANCE.json; manifest checksums refreshed.
+- VERIFIED: battle_smoke PASS, slice_integration PASS (AnimationPlayer + idle animating on new rig), hud_capture 7 frames — new Jayze readable at gameplay distance.
+- REJECTED per gates: v001 concept (glowing-armor mecha = hard reject), v002 (faceless mannequin), v003 (elderly cloth coat), v004 (child proportions), v005 (two-figure sheet).
+- KNOWN LIMITS: 126 sub-mm crack-seam edges (Hunyuan multi-shell, invisible in engine); back/side colors stretched (front projection); remaining cast still graybox (loop continues: Kip, Rallo, Jonnie, Sprocket, Clanker, Gimbal).
