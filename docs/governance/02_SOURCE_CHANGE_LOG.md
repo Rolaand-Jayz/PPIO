@@ -65,3 +65,12 @@
 **Immediate effect:** Contributors must preserve existing work, protect the user/system, pursue safe alternatives, and reject structurally samey or technically broken game assets and encounters. Current combat slice adapts incrementally rather than being rebuilt or automatically failed for new paperwork. Owner review is required for design identity acceptance.
 
 **Intentionally unchanged:** Godot code and running editor, Blender, ComfyUI flags/models, machine settings, local project files and remote configuration. No driver/GPU tests, actual skill/recipe installations, complete controller playthrough or art/audio subjective acceptance were performed by this documentation change. No campaign length/section/encounter minute quotas were invented. CI verifies file presence/links only; cannot judge art or runtime correctness.
+
+## PP-CHG-0007 — 2026-11-04
+**Confidence:** VERIFIED owner instruction for collaborative decision rights and preferred model roles; GitHub documents updated. Installed Goose version, provider IDs, quotas, tool routing and real execution still NOT TESTED.
+
+**Trigger:** Owner clarified ChatGPT is a reasoning partner **with** the owner, Goose is the implementation/test harness; user and ChatGPT should jointly decide the final specialization after reviewing measured evidence. GLM-5.3-Flash will be predominant for speed/cost, selective GLM-5.3 for demanding reasoning, with no assumed GLM-5.5 availability.
+
+**Changes:** Added `docs/production/07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md`; updated queued optimization task, repo/agent hints, authority index and decisions to define joint D0–D3 review gates, scoped paired tests, hard safety/quality gates, model escalation and future GLM-5.5 evaluation. No model/provider was actually switched in this commit. The owner's separate post-combat start prompt is still required.
+
+**Operational boundary:** ChatGPT does not automatically receive Goose's local live state or decisions; owner supplies the report or requests a fresh PPIO GitHub review. No autonomous approval, hidden background work or unsupported data access is claimed.

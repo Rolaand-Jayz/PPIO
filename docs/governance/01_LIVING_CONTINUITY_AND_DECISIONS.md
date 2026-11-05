@@ -25,6 +25,8 @@ A living record of **approved story reality and verified implementation**, disti
 | PP-D018 | Owner-required quality gate | Distinctive, high-quality physical/mechanical/visual/audio/gameplay identity with observable cross-project comparison, hard reject tests and owner slice acceptance |
 | PP-D019 | Project planning control | Section/encounter duration and distribution must be planned/measured; numeric full-campaign targets remain TBD until owner approval |
 | PP-D020 | Post-slice harness requirement | After explicit separate owner prompt, specialize Goose across real Godot Editor/runtime, Blender, guarded ComfyUI, audio and QA tools; not before combat completion |
+| PP-D021 | Owner-directed decision partnership | Owner and ChatGPT jointly reason through specialization architecture, tests, evidence and final selection; Goose proposes, implements and measures reversible candidates |
+| PP-D022 | Initial model routing policy | GLM-5.3-Flash primarily, selective GLM-5.3 for complex reasoning/safety/architecture; future GLM-5.5 requires validated comparison, no automatic switch |
 
 ## Continuity cells to maintain as scenes lock
 - Scene ID, location and timestamp/ordering; active toys and vantage.

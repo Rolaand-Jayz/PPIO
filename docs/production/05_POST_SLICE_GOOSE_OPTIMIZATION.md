@@ -14,6 +14,11 @@ Only begin **after the existing combat test slice reaches its recorded completio
 ## Adopt approved contributor laws and quality gates
 The repo now has an explicit [contributor standard](../../CONTRIBUTING.md), [resilience laws](../governance/04_CONTRIBUTOR_AND_RESILIENCE_RULES.md), [current-slice transition](../governance/05_VERTICAL_SLICE_TRANSITION.md), [distinctive-design quality gates](../design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md) and [toolchain integration requirements](06_TOOLCHAIN_INTEGRATION_CONTRACT.md). Your specialization must **implement practical, tested support** for these existing rules rather than rewriting them or replacing owner decisions. The rules apply now to normal contributions; this **automated specialization** starts only after a separate owner prompt.
 
+## Joint decision authority, not unsupervised final selection
+**The owner and ChatGPT reason together about the target architecture and benchmark criteria; Goose implements, experiments and reports.** Read [specialization review and model routing protocol](07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md) before making a trial profile. Goose can explore alternatives and implement disposable, project-local pilots under existing safety and privacy rules, but **does not self-approve a permanent final setup**. The owner makes final selections with ChatGPT's evidence-based recommendations. There is no direct continuous ChatGPT-to-Goose connection: provide a report/committed evidence for the owner to bring to ChatGPT for review. Do not start before separate owner prompt after combat slice.
+
+**Initial model policy:** use GLM-5.3-Flash for most execution, GLM-5.3 for harder architecture, safety, debugging and important critical review, based on validated installed provider/model IDs and quota. GLM-5.5 is a future unverified challenger requiring separate availability and quality/cost test. See full routing triggers, paired benchmarking and decision gates in the review protocol.
+
 ## Mission
 Goose Desktop will inspect its *actual installed version* and optimize **itself for long-term Playtime Protocol development**, not only combat. Evaluate native features and supported extensions, MCP tools, project skills, custom agents/roles, portable recipes, lifecycle hooks, persistent context, model/provider routing, optional desktop/MCP Apps and process/resource controls. Implement only improvements that have an observable quality, reliability, efficiency or safety benefit.
 
@@ -61,12 +66,13 @@ The optimized harness must verifiably interact with the installed **Godot Editor
 - Restrict always-on extensions, output volume, session history and concurrent child processes. Use low-cost headless checks, small targeted file searches and deterministic local code before invoking expensive models.
 - Keep active/idle resource gates, `resmon.sh` preflight, `comfy_guard.sh` monitoring, `--reserve-vram 3` and the established safer DynamicVRAM configuration until new, verified evidence authorizes a change. An interrupt guard is not guaranteed protection from sudden driver stalls.
 
-## 6 — Verify, package and hand off
+## 6 — Verify, present candidates, and obtain joint decision
 - For each proposed optimization, compare the same low-resource baseline task before/after, and measure errors, latency, duplicate work, context/tool overhead, CPU/RAM, and test outcome. Reject or roll back changes that worsen reliability.
 - Test skill discovery and use, recipe loading/execution, agent delegation under restricted extensions, safe hook firing, session checkpoint/restart, and the failure/rollback path without GPU stress.
-- Commit portable project-scoped configuration and docs to **PPIO** in reviewable increments after confirming remote/branch and PUBLIC-repo privacy restrictions. Keep machine-local paths/secrets in untracked local-only config. Preserve every existing working integration.
+- Submit the evaluation matrix, configurations and test evidence for owner + ChatGPT review before selecting final adoption; Goose's recommendation is not final approval.
+- Commit portable, approved project-scoped configuration and docs to **PPIO** in reviewable increments after confirming remote/branch and PUBLIC-repo privacy restrictions. Keep machine-local paths/secrets in untracked local-only config. Preserve every existing working integration.
 - Provide: installed/retained/removed components, configuration files and paths, recipe/skill invocation instructions, before/after evidence, security/permission changes, running process overhead, revert instructions, and pending approvals.
 
-**Definition of done:** A fresh Goose session in the correctly reconciled PPIO-linked local folder can discover task-relevant skills and tools, run a project recipe, preserve canon and work already completed, execute a bounded QA test, checkpoint progress and respect workstation headroom. Improvements must be demonstrable; merely adding tools does not count.
+**Definition of done:** Owner-approved configuration after ChatGPT + owner review of evidence. A fresh Goose session in the correctly reconciled PPIO-linked local folder can discover task-relevant skills and tools, run a project recipe, preserve canon and work already completed, execute a bounded QA test, checkpoint progress and respect workstation headroom. Improvements must be demonstrable; merely adding tools does not count.
 
 **Do not automatically activate this post-slice plan merely because a build reports completion. Wait for the owner's explicit handoff prompt. Do not begin the next game-development assignment or rewrite established governance without the owner's separate instruction.**

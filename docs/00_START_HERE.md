@@ -16,6 +16,7 @@ This is the operational index for **Playtime Protocol: Innocence Lost**. It deli
 - [Campaign section scope and pacing plan (numbers still unapproved)](design/06_CAMPAIGN_SCOPE_AND_PACING_FRAMEWORK.md)
 - [Distinctive design / anti-sameness and quality review](design/07_DISTINCTIVE_DESIGN_AND_QUALITY_GATES.md)
 - [Godot Editor, Blender, ComfyUI, audio and QA integration requirements](production/06_TOOLCHAIN_INTEGRATION_CONTRACT.md)
+- [Owner + ChatGPT architectural review and Goose model/test selection](production/07_GOOSE_SPECIALIZATION_REVIEW_PROTOCOL.md) — post-slice only
 
 ## Governance
 - [Acceptance/locking rules](governance/03_APPROVAL_AND_LOCKING_STANDARD.md)
