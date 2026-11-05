@@ -1,0 +1,40 @@
+# Large/generated media and local model caches
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.gguf
+*.bin
+*.bak
+*.swp
+*.tmp
+.cache/
+cache/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+# Godot local import and editor caches
+.godot/
+# generated asset and runtime reports; move approved distributables into managed storage
+production/builds/
+production/previews/
+production/logs/
+production/models/
+production/cache/
+game/.import/
+# credentials, crash evidence, workstation-specific data
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+core
+core.*
+*.core
+*.dmp
+*.swap
+*.log
+# don't exclude .blend/.glb or art sources universally; vet their size/license before committing
